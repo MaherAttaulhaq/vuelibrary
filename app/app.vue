@@ -1,10 +1,8 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <UApp>
-    <UMain>
+  <UApp class="mx-0 px-0">
+    <UMain class="mx-0 px-0">
       <NuxtPage />
     </UMain>
 
