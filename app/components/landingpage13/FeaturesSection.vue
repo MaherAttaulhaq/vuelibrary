@@ -38,11 +38,8 @@ const features = [
         <ul class="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 md:gap-y-12">
           <li v-for="feature in features" :key="feature.title">
             <div class="flex max-w-sm flex-col gap-4">
-              <div class="relative shrink-0 items-center justify-center bg-primary shadow-xs-skeuomorphic ring-1 ring-primary ring-inset size-12 rounded-[10px] text-fg-secondary hidden md:inline-flex">
-                <Icon :name="feature.icon" class="size-6" />
-              </div>
-              <div class="relative shrink-0 items-center justify-center bg-primary shadow-xs-skeuomorphic ring-1 ring-primary ring-inset size-10 rounded-lg text-fg-secondary inline-flex md:hidden">
-                <Icon :name="feature.icon" class="size-5" />
+              <div class="relative shrink-0 items-center justify-center bg-primary shadow-xs-skeuomorphic ring-1 ring-primary ring-inset size-10 md:size-12 rounded-lg md:rounded-[10px] text-fg-secondary inline-flex">
+                <Icon :name="feature.icon" class="size-5 md:size-6" />
               </div>
               <div>
                 <h3 class="text-lg font-semibold text-primary">{{ feature.title }}</h3>

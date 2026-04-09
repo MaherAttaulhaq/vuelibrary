@@ -1,12 +1,12 @@
-<script setup lang="eng">
+<script setup lang="ts">
 
-import AppHeader from './AppHeader.vue'
-import HeroSection from './HeroSection.vue'
-import TrustedBy from './TrustedBy.vue'
-import FeaturesSection from './FeaturesSection.vue'
-import PricingSection from './PricingSection.vue'
-import NewsletterSection from './NewsletterSection.vue'
-import AppFooter from './AppFooter.vue'
+import AppHeader from '../components/landingpage13/AppHeader.vue'
+import HeroSection from '../components/landingpage13/HeroSection.vue'
+import TrustedBy from '../components/landingpage13/TrustedBy.vue'
+import FeaturesSection from '../components/landingpage13/FeaturesSection.vue'
+import PricingSection from '../components/landingpage13/PricingSection.vue'
+import NewsletterSection from '../components/landingpage13/NewsletterSection.vue'
+import AppFooter from '../components/landingpage13/AppFooter.vue'
 </script>
 <template>
   <UApp>
