@@ -1,250 +1,716 @@
 <template>
   <div class="bg-muted relative overflow-hidden">
     <!-- Header -->
-    <header class="relative flex h-16 w-full items-center justify-center md:h-18">
-      <div class="flex size-full max-w-container flex-1 items-center px-4 md:px-8">
-        <div class="flex w-full justify-between gap-4">
-          <!-- Logo Area -->
-          <div class="flex flex-1 items-center gap-5">
-            <div class="flex w-max items-center justify-start overflow-visible h-7 md:max-lg:hidden">
-              <UIcon name="i-heroicons-square-3-stack-3d" class="size-8 text-primary" />
-              <div class="aspect-[0.3] h-full"></div>
-              <svg viewBox="0 0 97 32" fill="none" class="aspect-[3] h-full shrink-0 text-primary">
-                <!-- Your SVG path here - keeping original paths but using currentColor -->
-                <path d="M33.9101 10.2372C34.2321 10.5355 34.6179 10.6847 35.0678 10.6847C35.5176 10.6847 35.9011 10.5355 36.2183 10.2372C36.5403 9.9342 36.7013 9.57199 36.7013 9.15058C36.7013 8.73392 36.5403 8.37644 36.2183 8.07814C35.9011 7.77511 35.5176 7.6236 35.0678 7.6236C34.6179 7.6236 34.2321 7.77511 33.9101 8.07814C33.5928 8.37644 33.4342 8.73392 33.4342 9.15058C33.4342 9.57199 33.5928 9.9342 33.9101 10.2372Z" fill="currentColor"/>
-                <path d="M11.2997 20.6847C11.8063 19.8892 12.0597 18.9612 12.0597 17.9006V8.45456H8.98438V17.6378C8.98438 18.1918 8.86127 18.6842 8.61506 19.1151C8.37358 19.5459 8.0303 19.8845 7.58523 20.1307C7.14489 20.3769 6.62642 20.5 6.02983 20.5C5.43797 20.5 4.91951 20.3769 4.47443 20.1307C4.02936 19.8845 3.68371 19.5459 3.4375 19.1151C3.19602 18.6842 3.07528 18.1918 3.07528 17.6378V8.45456H0V17.9006C0 18.9612 0.250947 19.8892 0.752841 20.6847C1.25473 21.4801 1.95786 22.1004 2.86222 22.5455C3.76657 22.9858 4.82244 23.206 6.02983 23.206C7.23248 23.206 8.28599 22.9858 9.19034 22.5455C10.0947 22.1004 10.7978 21.4801 11.2997 20.6847Z" fill="currentColor"/>
-                <!-- ... rest of the SVG paths ... -->
-              </svg>
-            </div>
-            <nav class="max-md:hidden">
-              <ul class="flex items-center gap-0.5">
-                <li><UButton variant="link" class="text-secondary">Products</UButton></li>
-                <li><UButton variant="link" class="text-secondary">Services</UButton></li>
-                <li><UButton variant="link" class="text-secondary">Pricing</UButton></li>
-                <li><UButton variant="link" class="text-secondary">Resources</UButton></li>
-                <li><UButton variant="link" class="text-secondary">About</UButton></li>
-              </ul>
-            </nav>
-          </div>
-          <!-- Actions -->
-          <div class="hidden items-center gap-3 md:flex">
-            <UButton variant="ghost" color="primary">Log in</UButton>
-            <UButton color="primary">Sign up</UButton>
-          </div>
-          <UButton variant="ghost" icon="i-heroicons-bars-3" class="md:hidden" />
+    <UHeader
+      class="border-b border-border h-16 md:h-18"
+      :ui="{
+        container: 'max-w-[1560px] px-4 md:px-8 flex items-center justify-between'
+      }"
+    >
+      <template #left>
+        <h1 class="font-bold">
+          Nuxt UI
+        </h1>
+      </template>
+
+      <!-- DESKTOP NAV (your items) -->
+      <UNavigationMenu
+        :items="items"
+        class="hidden md:flex"
+        variant="link"
+      />
+
+      <!-- RIGHT SIDE (auth + mobile btn) -->
+      <template #right>
+        <!-- Desktop Auth -->
+        <div class="hidden md:flex items-center gap-3">
+          <UButton
+            variant="outline"
+            class="bg-background"
+          >
+            Log in
+          </UButton>
+          <UButton color="primary">
+            Sign up
+          </UButton>
         </div>
-      </div>
-    </header>
+      </template>
+
+      <!-- MOBILE MENU (your nav in body) -->
+      <template #body>
+        <UNavigationMenu
+          :items="items"
+          orientation="vertical"
+          class="-mx-2.5 md:hidden"
+        />
+
+        <!-- Mobile Auth -->
+        <div class="mt-4 flex flex-col gap-3 md:hidden">
+          <UButton
+            variant="outline"
+            block
+          >
+            Log in
+          </UButton>
+          <UButton
+            color="primary"
+            block
+          >
+            Sign up
+          </UButton>
+        </div>
+      </template>
+    </UHeader>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden py-16 lg:flex lg:min-h-180 lg:py-0">
-      <div class="mx-auto w-full max-w-container px-4 md:px-8">
-        <div class="flex flex-col items-start md:max-w-3xl lg:w-1/2 lg:pt-32 lg:pr-8 lg:pb-24">
-          <UBadge variant="subtle" class="hidden md:flex">We're hiring! <span class="ml-2">Join our remote team</span></UBadge>
-          <h1 class="mt-4 text-display-md font-semibold text-primary md:text-display-lg lg:text-display-xl">Smart business credit cards</h1>
-          <p class="mt-4 text-lg text-tertiary md:mt-6 md:max-w-lg md:text-xl">Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.</p>
-          <form class="mt-8 flex w-full flex-col items-stretch gap-4 md:mt-12 md:max-w-120 md:flex-row md:items-start">
-            <UInput type="email" placeholder="Enter your email" size="lg" class="w-full" />
-            <UButton type="submit" color="primary" size="lg" class="justify-center">Get started</UButton>
-          </form>
+    <UPageHero class="relative overflow-hidden  lg:flex lg:min-h-[720px] lg:py-0">
+      <!-- Left content -->
+      <div class="mx-auto w-full max-w-[1560px] px-4 md:px-8">
+        <div class="flex flex-col items-start md:max-w-3xl lg:w-1/2 lg:pt-32 lg:pb-24">
+          <!-- Badge -->
+          <UBadge
+            variant="subtle"
+            color="neutral"
+            class="hidden md:flex gap-2"
+          >
+            <span class="size-2 rounded-full bg-primary" />
+            We're hiring! Join our remote team
+            <UIcon
+              name="i-heroicons-arrow-right"
+              class="size-4"
+            />
+          </UBadge>
+
+          <!-- Headline -->
+          <h1 class="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
+            Smart business credit cards
+          </h1>
+
+          <!-- Description -->
+          <p class="mt-6 text-lg text-muted-foreground md:text-xl">
+            Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
+          </p>
+
+          <!-- Input + Button -->
+          <div class="mt-8 flex w-full flex-col gap-3 md:mt-10 md:max-w-md md:flex-row">
+            <UInput
+              size="lg"
+              placeholder="Enter your email"
+              class="flex-1"
+            />
+            <UButton
+              color="primary"
+              size="lg"
+            >
+              Get started
+            </UButton>
+          </div>
+
+          <!-- Privacy Text -->
+          <p class="mt-4 text-sm text-muted-foreground">
+            We care about your data. Read our
+            <a
+              href="#"
+              class="text-primary underline"
+            >privacy policy</a>
+          </p>
         </div>
       </div>
-      <!-- Hero Image/Illustration Area -->
-      <div class="relative mt-16 h-80 w-full bg-secondary px-4 md:h-95 md:px-8 lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:h-full lg:w-1/2 lg:px-0">
-        <!-- Cards Carousel Mockup -->
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 overflow-hidden sm:pl-[30vw] lg:overflow-visible lg:pl-0">
-          <div class="flex w-max flex-col gap-4 [transform:var(--transform-mobile)] lg:[transform:var(--transform-desktop)]" style="--transform-mobile:scale(0.585) rotate(30deg) translate(-87px, 799px);--transform-desktop:rotate(30deg) translate(186px, 291px)">
-            <div class="flex gap-4 pl-40">
-              <UCard class="w-80 h-48 bg-gradient-to-tr from-primary-900 to-primary-700 text-white shadow-xl">
-                <template #header>
-                  <div class="flex justify-between">
-                    <span class="font-semibold">Untitled.</span>
-                    <UIcon name="i-heroicons-wifi" class="w-5 h-5" />
-                  </div>
-                </template>
-                <div class="flex justify-between items-end">
-                  <div>
-                    <div class="text-xs uppercase">Phoenix baker</div>
-                    <div class="font-mono tracking-wider">1234 1234 1234 1234</div>
-                  </div>
-                  <UBadge>VISA</UBadge>
+
+      <!-- Right content: Hero card rotated stack -->
+      <div class="relative mt-16 h-80 w-full bg-muted/50 px-4 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:h-full lg:w-1/2 lg:px-0">
+        <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+          <div
+            class="relative"
+            style="transform: rotate(25deg) scale(0.8) translateX(100px);"
+          >
+            <!-- Rotated Card -->
+            <div class="relative lg:w-[480px] lg:h-[350px] w-[350px] h-[200px] rounded-2xl bg-gradient-to-br from-primary/90 to-primary shadow-xl overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              <div class="relative p-5 flex flex-col justify-between h-full">
+                <div class="flex justify-between text-white">
+                  <span class="font-semibold">Untitled</span>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
                 </div>
-              </UCard>
-              <!-- Repeat cards for effect -->
+                <div>
+                  <div class="text-xs text-white/80 uppercase">
+                    Phoenix Baker
+                  </div>
+                  <div class="text-white text-lg tracking-wider">
+                    •••• 1234
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </UPageHero>
+
+    <!-- Logo Cloud -->
+    <section class="bg-muted/50 py-12 md:py-16">
+      <div class="mx-auto max-w-[1560px] px-4 md:px-8">
+        <div class="flex flex-col gap-8">
+          <p class="text-center text-sm font-medium text-muted-foreground">
+            Join 4,000+ companies already growing
+          </p>
+          <div class="flex flex-wrap justify-center gap-8">
+            <img
+              src="https://www.untitledui.com/logos/logotype/color/odeao-labs.svg"
+              class="h-8 md:h-9 opacity-70"
+              alt="Logo"
+            >
+            <img
+              src="https://www.untitledui.com/logos/logotype/color/kintsugi.svg"
+              class="h-8 md:h-9 opacity-70"
+              alt="Logo"
+            >
+            <img
+              src="https://www.untitledui.com/logos/logotype/color/stacked-lab.svg"
+              class="h-8 md:h-9 opacity-70"
+              alt="Logo"
+            >
+            <img
+              src="https://www.untitledui.com/logos/logotype/color/magnolia.svg"
+              class="h-8 md:h-9 opacity-70"
+              alt="Logo"
+            >
+            <img
+              src="https://www.untitledui.com/logos/logotype/color/warpspeed.svg"
+              class="h-8 md:h-9 opacity-70"
+              alt="Logo"
+            >
+            <img
+              src="https://www.untitledui.com/logos/logotype/color/sisyphus.svg"
+              class="h-8 md:h-9 opacity-70"
+              alt="Logo"
+            >
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Logo Cloud Section -->
-    <USection class="py-16 md:py-24">
-      <div class="text-center">
-        <p class="text-md font-medium text-tertiary">Join 4,000+ companies already growing</p>
-        <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 mt-8">
-          <!-- Logo images -->
-          <img v-for="logo in logos" :key="logo" :src="logo" class="h-9 md:h-10 opacity-60" />
-        </div>
-      </div>
-    </USection>
-
     <!-- Features Section -->
-    <USection class="overflow-hidden bg-primary py-16 md:py-24">
-      <div class="mx-auto w-full max-w-container px-4 md:px-8">
-        <div class="flex w-full flex-col lg:max-w-3xl">
-          <span class="text-sm font-semibold text-primary-600 md:text-md">Features</span>
-          <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">Stop leaving money on the table</h2>
-          <p class="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">Spend smarter, lower your bills, get cashback on everything you buy, and unlock credit to grow your business.</p>
+    <UPageSection
+      title="Stop leaving money on the table"
+      description="Spend smarter, lower your bills, get cashback on everything you buy, and unlock credit to grow your business."
+    >
+      <template #headline>
+        <span class="text-sm font-semibold text-primary">
+          Features
+        </span>
+      </template>
+
+      <!-- Custom layout (IMPORTANT for matching structure) -->
+      <div class="mt-12 grid grid-cols-1 gap-8 md:mt-16 lg:grid-cols-2 lg:gap-12">
+        <!-- LEFT: Features list using Nuxt UI -->
+        <div class="space-y-10">
+          <UPageFeature
+            v-for="feature in features"
+            :key="feature.title"
+            :title="feature.title"
+            :description="feature.description"
+            :icon="feature.icon"
+          >
+            <template #actions>
+              <UButton
+                variant="link"
+                color="primary"
+                class="p-0"
+              >
+                Learn more
+                <UIcon
+                  name="i-heroicons-arrow-right"
+                  class="size-4"
+                />
+              </UButton>
+            </template>
+          </UPageFeature>
         </div>
-        <div class="mt-12 grid grid-cols-1 gap-12 md:mt-16 md:gap-16 lg:grid-cols-2 lg:items-center">
-          <ul class="grid grid-cols-1 gap-x-8 gap-y-10 md:gap-y-12">
-            <li v-for="feature in features" :key="feature.title">
-              <div class="flex max-w-140 gap-4">
-                <div class="relative shrink-0 items-center justify-center bg-primary shadow-sm ring-1 ring-primary size-12 rounded-[10px] text-primary-600 hidden md:inline-flex">
-                  <UIcon :name="feature.icon" class="size-6" />
+
+        <!-- RIGHT: 3D Card Stack (custom, unchanged) -->
+        <div class="relative flex items-center justify-center min-h-[400px] bg-muted/30 rounded-2xl">
+          <div class="relative perspective-1000">
+            <div
+              class="relative space-y-[-120px]"
+              style="transform: rotateX(60deg) rotateZ(45deg) scale(0.9);"
+            >
+              <!-- Card 1 -->
+              <div class="relative w-[400px] h-[300px] rounded-xl bg-gradient-to-br from-primary to-primary/80 shadow-xl p-4">
+                <div class="flex justify-between text-white">
+                  <span class="font-semibold">Untitled</span>
+                  <span class="text-sm">06/28</span>
                 </div>
-                <div>
-                  <h3 class="mt-1.5 text-lg font-semibold text-primary md:mt-2.5">{{ feature.title }}</h3>
-                  <p class="mt-1 text-md text-tertiary">{{ feature.description }}</p>
-                  <UButton variant="link" color="primary" class="mt-4 p-0">Learn more <UIcon name="i-heroicons-arrow-right" /></UButton>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <div class="text-xs text-white/70 uppercase">
+                    Demi Wilkinson
+                  </div>
+                  <div class="text-white text-md tracking-wider">
+                    1234 1234 1234 1234
+                  </div>
                 </div>
               </div>
-            </li>
-          </ul>
-          <div class="relative -mx-4 flex h-80 items-center justify-center bg-tertiary md:mr-0 md:h-120 md:rounded-2xl lg:h-140">
-            <!-- Feature image placeholder -->
+
+              <!-- Card 2 -->
+              <div class="relative w-[400px] h-[250px] rounded-xl bg-gradient-to-br from-primary/80 to-primary/60 shadow-xl p-4 backdrop-blur">
+                <div class="flex justify-between text-white">
+                  <span class="font-semibold">Untitled</span>
+                  <span class="text-sm">06/28</span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <div class="text-xs text-white/70 uppercase">
+                    Lana Steiner
+                  </div>
+                  <div class="text-white text-md tracking-wider">
+                    1234 1234 1234 1234
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="relative w-[300px] h-[180px] rounded-xl bg-gradient-to-br from-primary/60 to-primary/40 shadow-xl p-4 backdrop-blur">
+                <div class="flex justify-between text-white">
+                  <span class="font-semibold">Untitled</span>
+                  <span class="text-sm">06/28</span>
+                </div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <div class="text-xs text-white/70 uppercase">
+                    Olivia Rhye
+                  </div>
+                  <div class="text-white text-md tracking-wider">
+                    1234 1234 1234 1234
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </UPageSection>
+    <!-- CTA Banner -->
+    <section class="bg-muted/50 py-16 lg:py-20">
+      <div class="mx-auto max-w-[1560px] px-4 md:px-8">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
+              No long-term contracts. No catches.
+            </h2>
+            <p class="mt-4 text-lg text-muted-foreground md:text-xl">
+              Start your 30-day free trial today.
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <UButton
+                variant="outline"
+                size="lg"
+              >
+                Learn more
+              </UButton>
+              <UButton
+                color="primary"
+                size="lg"
+              >
+                Get started
+              </UButton>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 grid-rows-2 gap-3 h-80">
+            <img
+              src="https://www.untitledui.com/marketing/abstract-image-01.webp"
+              class="rounded-xl object-cover w-full h-full"
+              alt="Abstract"
+            >
+            <img
+              src="https://www.untitledui.com/marketing/abstract-image-02.webp"
+              class="rounded-xl object-cover w-full h-full"
+              alt="Abstract"
+            >
+            <img
+              src="https://www.untitledui.com/marketing/abstract-image-03.webp"
+              class="rounded-xl object-cover w-full h-full"
+              alt="Abstract"
+            >
+            <img
+              src="https://www.untitledui.com/marketing/abstract-image-04.webp"
+              class="rounded-xl object-cover w-full h-full"
+              alt="Abstract"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Switch Section -->
+    <USection class="py-16 mb-10 md:py-24">
+      <div class="mx-auto max-w-[1560px] px-4 md:px-8">
+        <!-- Section Heading -->
+        <div class="max-w-2xl">
+          <span class="text-sm font-semibold text-primary">Why switch?</span>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+            Get your finances right
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">
+            We offer the best accounting and expense tracking for ambitious businesses.
+          </p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <UCard
+            v-for="item in whySwitch"
+            :key="item.title"
+            class="p-6 bg-background border border-border rounded-xl"
+          >
+            <!-- Icon -->
+            <div class="size-12 rounded-xl bg-primary/10 flex items-center justify-center">
+              <UIcon
+                :name="item.icon"
+                class="size-6 text-primary"
+              />
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="mt-4 text-lg font-semibold text-foreground">
+              {{ item.title }}
+            </h3>
+            <p class="mt-2 text-muted-foreground">
+              {{ item.description }}
+            </p>
+
+            <!-- Action Button -->
+            <UButton
+              variant="link"
+              color="primary"
+              class="mt-4 p-0"
+            >
+              Learn more
+              <UIcon
+                name="i-heroicons-arrow-right"
+                class="size-4"
+              />
+            </UButton>
+          </UCard>
         </div>
       </div>
     </USection>
 
     <!-- Pricing Section -->
-    <USection class="bg-secondary py-16 md:py-24">
-      <div class="mx-auto max-w-container px-4 md:px-8">
-        <div class="flex flex-col gap-12 md:gap-16 xl:flex-row">
-          <div class="w-full max-w-3xl xl:max-w-md">
-            <span class="block text-sm font-semibold text-primary-600 md:text-md">Upgrade</span>
-            <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">Pricing plans that scale with you</h2>
-            <p class="mt-4 text-lg text-tertiary md:mt-5">Simple, transparent pricing that grows with you. Try any plan free for 30 days.</p>
+    <USection class="bg-muted/30  py-16 md:py-24">
+      <div class="mx-auto max-w-[1560px] px-4 md:px-8">
+        <!-- Heading -->
+        <div class="flex flex-col gap-8 lg:flex-row lg:justify-between">
+          <div class="max-w-md">
+            <span class="text-sm font-semibold text-primary">Upgrade</span>
+            <h2 class="mt-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+              Pricing plans that scale
+            </h2>
+            <p class="mt-4 text-muted-foreground">
+              Simple, transparent pricing that grows with you. Try any plan free for 30 days.
+            </p>
           </div>
-          <div class="grid w-full grid-cols-1 items-start gap-4 md:grid-cols-2 md:gap-8">
-            <UCard v-for="plan in plans" :key="plan.name" class="flex flex-col">
-              <div class="text-center">
-                <div class="mx-auto w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-700">
-                  <UIcon :name="plan.icon" class="size-6" />
+
+          <!-- Plans Grid -->
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 flex-1 max-w-3xl">
+            <!-- Basic Plan -->
+            <UCard class="bg-background border border-border rounded-2xl overflow-hidden">
+              <div class="p-6 text-center border-b border-border">
+                <div class="size-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                  <UIcon
+                    name="i-heroicons-sparkles"
+                    class="size-6 text-primary"
+                  />
                 </div>
-                <h3 class="mt-4 text-xl font-semibold text-primary-600">{{ plan.name }}</h3>
-                <div class="mt-2 text-display-md font-semibold text-primary">{{ plan.price }}/mth</div>
-                <p class="mt-2 text-md text-tertiary">Billed annually.</p>
+                <h3 class="mt-4 text-xl font-semibold text-foreground">
+                  Basic plan
+                </h3>
+                <p class="mt-2 text-3xl font-bold text-foreground">
+                  $10<span class="text-base font-normal text-muted-foreground">/mth</span>
+                </p>
+                <p class="text-sm text-muted-foreground">
+                  Billed annually.
+                </p>
               </div>
-              <UDivider class="my-6" />
-              <ul class="space-y-4 flex-grow">
-                <li v-for="feature in plan.features" :key="feature" class="flex gap-3">
-                  <UIcon name="i-heroicons-check-circle" class="size-5 text-primary-500 shrink-0" />
-                  <span class="text-tertiary text-md">{{ feature }}</span>
+
+              <ul class="p-6 space-y-3">
+                <li
+                  v-for="feature in basicFeatures"
+                  :key="feature"
+                  class="flex gap-3 text-muted-foreground"
+                >
+                  <UIcon
+                    name="i-heroicons-check-circle"
+                    class="size-5 text-primary shrink-0 mt-0.5"
+                  />
+                  <span>{{ feature }}</span>
                 </li>
               </ul>
-              <UButton color="primary" block class="mt-8">Get started</UButton>
+
+              <div class="p-6 border-t border-border bg-muted/20">
+                <UButton
+                  color="primary"
+                  block
+                >
+                  Get started
+                </UButton>
+              </div>
+            </UCard>
+
+            <!-- Business Plan -->
+            <UCard class="bg-background border-2 border-primary rounded-2xl overflow-hidden shadow-lg">
+              <div class="p-6 text-center border-b border-border">
+                <div class="size-12 rounded-full bg-primary flex items-center justify-center mx-auto">
+                  <UIcon
+                    name="i-heroicons-cube"
+                    class="size-6 text-white"
+                  />
+                </div>
+                <h3 class="mt-4 text-xl font-semibold text-foreground">
+                  Business plan
+                </h3>
+                <p class="mt-2 text-3xl font-bold text-foreground">
+                  $20<span class="text-base font-normal text-muted-foreground">/mth</span>
+                </p>
+                <p class="text-sm text-muted-foreground">
+                  Billed annually.
+                </p>
+              </div>
+
+              <ul class="p-6 space-y-3">
+                <li
+                  v-for="feature in businessFeatures"
+                  :key="feature"
+                  class="flex gap-3 text-muted-foreground"
+                >
+                  <UIcon
+                    name="i-heroicons-check-circle"
+                    class="size-5 text-primary shrink-0 mt-0.5"
+                  />
+                  <span>{{ feature }}</span>
+                </li>
+              </ul>
+
+              <div class="p-6 border-t border-border bg-muted/20">
+                <UButton
+                  color="primary"
+                  block
+                >
+                  Get started
+                </UButton>
+              </div>
             </UCard>
           </div>
         </div>
       </div>
     </USection>
 
-    <!-- CTA Section -->
-    <USection class="bg-primary pb-16 md:pb-24">
-      <div class="mx-auto max-w-container px-4 md:px-8">
-        <UCard class="text-center bg-primary-50 dark:bg-primary-900/20">
-          <h2 class="text-display-sm font-semibold text-primary">Start your 30-day free trial</h2>
-          <p class="mt-4 text-lg text-tertiary">Join over 4,000+ startups already growing with Untitled.</p>
-          <div class="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:justify-center">
-            <UButton variant="outline">Learn more</UButton>
-            <UButton color="primary">Get started</UButton>
+    <!-- Newsletter Section -->
+    <section class="py-16 md:py-20">
+      <div class="mx-auto max-w-[1560px] px-4 md:px-8">
+        <div class="bg-muted/50 rounded-2xl p-8 text-center md:p-12">
+          <h2 class="text-2xl font-bold text-foreground md:text-3xl">
+            Still thinking about it?
+          </h2>
+          <p class="mt-2 text-muted-foreground">
+            Sign up for our newsletter and get 10% off your next purchase.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 max-w-md mx-auto sm:flex-row">
+            <UInput
+              placeholder="Enter your email"
+              class="flex-1"
+            />
+            <UButton color="primary">
+              Subscribe
+            </UButton>
           </div>
-        </UCard>
+          <p class="mt-4 text-xs text-muted-foreground">
+            Read our <a
+              href="#"
+              class="text-primary underline"
+            >privacy policy</a>
+          </p>
+        </div>
       </div>
-    </USection>
+    </section>
 
     <!-- Footer -->
-    <UFooter class="bg-primary pt-12 pb-8">
-      <div class="mx-auto max-w-container px-4 md:px-8">
-        <div class="flex flex-col justify-between gap-x-8 gap-y-12 lg:flex-row">
-          <div class="flex flex-col gap-8 md:items-start">
+    <footer class="border-t border-border bg-background pt-12 pb-8">
+      <div class="mx-auto max-w-[1560px] px-4 md:px-8">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-4">
+          <div class="col-span-1">
             <div class="flex items-center gap-2">
-              <UIcon name="i-heroicons-square-3-stack-3d" class="size-8 text-primary" />
-              <span class="text-xl font-bold text-primary">Untitled</span>
+              <div class="size-8 rounded-lg bg-primary flex items-center justify-center">
+                <span class="text-white font-bold">U</span>
+              </div>
+              <span class="text-xl font-semibold text-foreground">Untitled</span>
             </div>
-            <p class="text-md text-tertiary max-w-xs">Banking technology that has your back.</p>
+            <p class="mt-4 text-sm text-muted-foreground">
+              Banking technology that has your back.
+            </p>
           </div>
-          <div class="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-3 lg:grid-cols-6">
-            <UButton v-for="link in footerLinks" :key="link" variant="link" class="text-tertiary">{{ link }}</UButton>
+
+          <div class="col-span-3">
+            <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+              <div
+                v-for="col in footerLinks"
+                :key="col.title"
+              >
+                <h4 class="text-sm font-semibold text-foreground">
+                  {{ col.title }}
+                </h4>
+                <ul class="mt-3 space-y-2">
+                  <li
+                    v-for="link in col.links"
+                    :key="link"
+                  >
+                    <a
+                      href="#"
+                      class="text-sm text-muted-foreground hover:text-foreground"
+                    >{{ link }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-        <UDivider class="my-8" />
-        <div class="flex flex-col-reverse justify-between gap-6 md:flex-row">
-          <p class="text-sm text-quaternary">© 2077 Untitled UI. All rights reserved.</p>
+
+        <div class="mt-8 pt-8 border-t border-border flex flex-col justify-between gap-4 sm:flex-row">
+          <p class="text-sm text-muted-foreground">
+            © 2077 Untitled UI. All rights reserved.
+          </p>
           <div class="flex gap-4">
-            <UButton v-for="social in socialLinks" :key="social.name" :icon="social.icon" variant="ghost" size="sm" class="text-quaternary" />
+            <a
+              href="#"
+              class="text-muted-foreground hover:text-foreground"
+            ><UIcon
+              name="i-simple-icons-x"
+              class="size-5"
+            /></a>
+            <a
+              href="#"
+              class="text-muted-foreground hover:text-foreground"
+            ><UIcon
+              name="i-simple-icons-linkedin"
+              class="size-5"
+            /></a>
+            <a
+              href="#"
+              class="text-muted-foreground hover:text-foreground"
+            ><UIcon
+              name="i-simple-icons-facebook"
+              class="size-5"
+            /></a>
+            <a
+              href="#"
+              class="text-muted-foreground hover:text-foreground"
+            ><UIcon
+              name="i-simple-icons-github"
+              class="size-5"
+            /></a>
           </div>
         </div>
       </div>
-    </UFooter>
+    </footer>
   </div>
 </template>
 
-<script setup>
-// Data for dynamic rendering
-const logos = [
-  'https://www.untitledui.com/logos/logotype/color/odeao-labs.svg',
-  'https://www.untitledui.com/logos/logotype/color/kintsugi.svg',
-  'https://www.untitledui.com/logos/logotype/color/stacked-lab.svg',
-  'https://www.untitledui.com/logos/logotype/color/magnolia.svg',
-  'https://www.untitledui.com/logos/logotype/color/warpspeed.svg',
-  'https://www.untitledui.com/logos/logotype/color/sisyphus.svg'
+<script setup lang="ts">
+import type { NavigationMenuItem } from '@nuxt/ui'
+
+const route = useRoute()
+
+const items = computed<NavigationMenuItem[]>(() => [
+  { label: 'Products' },
+  { label: 'Services' },
+  { label: 'Pricing' },
+  { label: 'Resources' },
+  { label: 'About' }
+])
+
+const whySwitch = [
+  {
+    title: 'Share team inboxes',
+    description: 'Keep everyone on the same page with shared team inboxes.',
+    icon: 'i-heroicons-envelope'
+  },
+  {
+    title: 'Deliver instant answers',
+    description: 'Customer service platform that helps balance everything.',
+    icon: 'i-heroicons-chat-bubble-left-right'
+  },
+  {
+    title: 'Manage your team',
+    description: 'Easy-to-use reports to filter, export, and drilldown on data.',
+    icon: 'i-heroicons-users'
+  },
+  {
+    title: 'Connect with customers',
+    description: 'Real-time chat that seamlessly routes to email when needed.',
+    icon: 'i-heroicons-chat-bubble-oval-left'
+  }
+]
+
+const basicFeatures = [
+  'Feature 1 included',
+  'Feature 2 included',
+  'Feature 3 included',
+  'Feature 4 included'
+]
+
+const businessFeatures = [
+  'All Basic features',
+  'Advanced analytics',
+  'Priority support',
+  'Custom integrations'
+]
+
+/** @type {Array<{title: string, links: string[]}>} */
+const footerLinks = [
+  { title: 'Product', links: ['Overview', 'Features', 'Pricing', 'Careers'] },
+  { title: 'Company', links: ['About', 'Blog', 'Press', 'Partners'] },
+  { title: 'Resources', links: ['Documentation', 'Help Center', 'Guides', 'API Status'] },
+  { title: 'Legal', links: ['Privacy', 'Terms', 'Security', 'Compliance'] },
+  { title: 'Social', links: ['Twitter', 'LinkedIn', 'GitHub', 'Discord'] }
 ]
 
 const features = [
   {
-    icon: 'i-heroicons-chat-bubble-left-right',
-    title: 'Unlimited cards',
-    description: 'Give your team the autonomy they need with access to as many cards as they need.'
+    title: 'Spend smarter',
+    description: 'Optimize your spending with intelligent insights.',
+    icon: 'i-lucide-wallet'
   },
   {
-    icon: 'i-heroicons-bolt',
-    title: 'Easy expense policies',
-    description: 'Every card comes with configurable spending limits, purchase restrictions, and cancellations.'
+    title: 'Lower your bills',
+    description: 'Automatically reduce unnecessary expenses.',
+    icon: 'i-lucide-receipt'
   },
   {
-    icon: 'i-heroicons-chart-bar',
-    title: 'Advanced analytics',
-    description: 'An all-in-one platform that helps you balance everything your team need to be happy.'
+    title: 'Get cashback',
+    description: 'Earn rewards on every transaction.',
+    icon: 'i-lucide-badge-percent'
+  },
+  {
+    title: 'Unlock credit',
+    description: 'Access flexible credit to grow your business.',
+    icon: 'i-lucide-credit-card'
   }
-]
-
-const plans = [
-  {
-    name: 'Basic plan',
-    price: '$10',
-    icon: 'i-heroicons-sparkles',
-    features: ['Access to all basic features', 'Basic reporting and analytics', 'Up to 10 individual users', '20 GB individual data', 'Basic chat and email support']
-  },
-  {
-    name: 'Business plan',
-    price: '$20',
-    icon: 'i-heroicons-cube',
-    features: ['200+ integrations', 'Advanced reporting', 'Up to 20 individual users', '40 GB individual data', 'Priority chat and email support']
-  }
-]
-
-const footerLinks = ['Overview', 'Features', 'Pricing', 'Careers', 'Help', 'Privacy']
-const socialLinks = [
-  { name: 'X', icon: 'i-heroicons-x-mark' },
-  { name: 'LinkedIn', icon: 'i-heroicons-linkedin' },
-  { name: 'Facebook', icon: 'i-heroicons-facebook' },
-  { name: 'GitHub', icon: 'i-heroicons-github' }
 ]
 </script>
 
-<style scoped>
-/* Any custom styles if needed, though Nuxt UI handles most */
+<style>
+/* Global styles */
+body {
+  background-color: hsl(var(--background));
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
 </style>
