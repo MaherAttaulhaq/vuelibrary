@@ -27,7 +27,7 @@ const socialLinks = [
           Start your 30-day free trial. Cancel anytime.
         </p>
         <div class="mt-8 flex flex-col-reverse gap-3 self-stretch md:mt-12 md:flex-row md:self-center">
-          <UButton variant="outline" color="white" size="lg">
+          <UButton variant="outline" color="neutral" size="lg">
             <Icon name="lucide:play" class="size-5" />
             View demo
           </UButton>
