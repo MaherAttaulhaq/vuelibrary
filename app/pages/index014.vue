@@ -1,5 +1,8 @@
 <script setup lang="ts">
 const mobileMenuOpen = ref(false)
+const email = ref('')
+const newsletterEmail = ref('')
+const isLoading = ref(false)
 
 const navigationItems = [
   { label: 'Products', type: 'dropdown', items: [
@@ -22,17 +25,81 @@ const navigationItems = [
 ]
 
 const companies = [
-  { name: 'Odeaolabs', color: 'https://www.untitledui.com/logos/logotype/color/odeao-labs.svg', white: 'https://www.untitledui.com/logos/logotype/white/odeao-labs.svg' },
-  { name: 'Kintsugi', color: 'https://www.untitledui.com/logos/logotype/color/kintsugi.svg', white: 'https://www.untitledui.com/logos/logotype/white/kintsugi.svg' },
-  { name: 'Stackedlab', color: 'https://www.untitledui.com/logos/logotype/color/stacked-lab.svg', white: 'https://www.untitledui.com/logos/logotype/white/stacked-lab.svg' },
-  { name: 'Magnolia', color: 'https://www.untitledui.com/logos/logotype/color/magnolia.svg', white: 'https://www.untitledui.com/logos/logotype/white/magnolia.svg' },
-  { name: 'Warpspeed', color: 'https://www.untitledui.com/logos/logotype/color/warpspeed.svg', white: 'https://www.untitledui.com/logos/logotype/white/warpspeed.svg' },
-  { name: 'Sisyphus', color: 'https://www.untitledui.com/logos/logotype/color/sisyphus.svg', white: 'https://www.untitledui.com/logos/logotype/white/sisyphus.svg' },
+  { name: 'Ephemeral', color: 'https://www.untitledui.com/logos/logotype/color/ephemeral.svg', white: 'https://www.untitledui.com/logos/logotype/white/ephemeral.svg' },
+  { name: 'Wildcrafted', color: 'https://www.untitledui.com/logos/logotype/color/wildcrafted.svg', white: 'https://www.untitledui.com/logos/logotype/white/wildcrafted.svg' },
+  { name: 'Codecraft', color: 'https://www.untitledui.com/logos/logotype/color/codecraft.svg', white: 'https://www.untitledui.com/logos/logotype/white/codecraft.svg' },
+  { name: 'Convergence', color: 'https://www.untitledui.com/logos/logotype/color/convergence.svg', white: 'https://www.untitledui.com/logos/logotype/white/convergence.svg' },
+  { name: 'Imgcompress', color: 'https://www.untitledui.com/logos/logotype/color/img-compress.svg', white: 'https://www.untitledui.com/logos/logotype/white/img-compress.svg' },
+  { name: 'Epicurious', color: 'https://www.untitledui.com/logos/logotype/color/epicurious.svg', white: 'https://www.untitledui.com/logos/logotype/white/epicurious.svg' },
+  { name: 'Watchtower', color: 'https://www.untitledui.com/logos/logotype/color/watchtower.svg', white: 'https://www.untitledui.com/logos/logotype/white/watchtower.svg' },
+  { name: 'Renaissance', color: 'https://www.untitledui.com/logos/logotype/color/renaissance.svg', white: 'https://www.untitledui.com/logos/logotype/white/renaissance.svg' },
+  { name: 'Contrastai', color: 'https://www.untitledui.com/logos/logotype/color/contrast-ai.svg', white: 'https://www.untitledui.com/logos/logotype/white/contrast-ai.svg' },
+  { name: 'Nietzsche', color: 'https://www.untitledui.com/logos/logotype/color/nietzsche.svg', white: 'https://www.untitledui.com/logos/logotype/white/nietzsche.svg' },
 ]
 
-const email = ref('')
-const newsletterEmail = ref('')
-const isLoading = ref(false)
+const capabilities = [
+  {
+    icon: 'lucide:message-circle',
+    title: 'Share team inboxes',
+    description: 'Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.'
+  },
+  {
+    icon: 'lucide:zap',
+    title: 'Deliver instant answers',
+    description: 'An all-in-one customer service platform that helps you balance everything your customers need to be happy.'
+  },
+  {
+    icon: 'lucide:bar-chart-2',
+    title: 'Manage your team with reports',
+    description: 'Measure what matters with Untitled\'s easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.'
+  },
+  {
+    icon: 'lucide:smile',
+    title: 'Connect with customers',
+    description: 'Solve a problem or close a sale in real-time with chat. If no one is available, customers are seamlessly routed to email without confusion.'
+  },
+  {
+    icon: 'lucide:grid',
+    title: 'Connect the tools you already use',
+    description: 'Explore 100+ integrations that make your day-to-day workflow more efficient and familiar. Plus, our extensive developer tools.'
+  },
+  {
+    icon: 'lucide:heart',
+    title: 'Our people make the difference',
+    description: 'We\'re an extension of your customer service team, and all of our resources are free. Chat to our friendly team 24/7 when you need help.'
+  }
+]
+
+const contactItems = [
+  {
+    icon: 'lucide:smile',
+    title: 'Chat to sales',
+    description: 'Speak to our friendly team.',
+    link: 'mailto:sales@untitledui.com',
+    linkText: 'sales@untitledui.com'
+  },
+  {
+    icon: 'lucide:message-circle',
+    title: 'Chat to support',
+    description: 'We\'re here to help.',
+    link: 'mailto:support@untitledui.com',
+    linkText: 'support@untitledui.com'
+  },
+  {
+    icon: 'lucide:map-pin',
+    title: 'Visit us',
+    description: 'Visit our office HQ.',
+    link: 'https://goo.gl/maps/zTXmPKVdUvCQH9Wd6',
+    linkText: '100 Smith Street\nCollingwood VIC 3066 AU'
+  },
+  {
+    icon: 'lucide:phone',
+    title: 'Call us',
+    description: 'Mon-Fri from 8am to 5pm.',
+    link: 'tel:+1 (555) 000-0000',
+    linkText: '+1 (555) 000-0000'
+  }
+]
 
 async function onSubmitNewsletter() {
   isLoading.value = true
@@ -45,18 +112,18 @@ async function onSubmitNewsletter() {
 
 <template>
   <div class="bg-muted">
-    <!-- Background Grid -->
-    <div class="relative overflow-hidden">
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden bg-muted">
       <img
-        alt="Grid of dots"
+        alt="Grid background pattern"
         aria-hidden="true"
-        src="https://www.untitledui.com/patterns/light/grid-dot-sm-desktop.svg"
+        src="https://www.untitledui.com/patterns/light/grid-md-desktop.svg"
         class="pointer-events-none absolute top-0 left-1/2 z-0 hidden max-w-none -translate-x-1/2 dark:brightness-[0.2] md:block"
       />
       <img
-        alt="Grid of dots"
+        alt="Grid background pattern"
         aria-hidden="true"
-        src="https://www.untitledui.com/patterns/light/grid-dot-sm-mobile.svg"
+        src="https://www.untitledui.com/patterns/light/grid-sm-mobile.svg"
         class="pointer-events-none absolute top-0 left-1/2 z-0 max-w-none -translate-x-1/2 dark:brightness-[0.2] md:hidden"
       />
 
@@ -70,7 +137,7 @@ async function onSubmitNewsletter() {
                 <svg viewBox="0 0 38 38" fill="none" class="size-8 origin-center scale-[1.2] aspect-square h-full w-auto shrink-0">
                   <g filter="url(#filter0_logo)">
                     <g clip-path="url(#clip0_logo)">
-                      <path d="M3 14.8C3 10.3196 3 8.07937 3.87195 6.36808C4.63893 4.86278 5.86278 3.63893 7.36808 2.87195C9.07937 2 11.3196 2 15.8 2H22.2C26.6804 2 28.9206 2 30.6319 2.87195C32.1372 3.63893 33.3611 4.86278 34.1281 6.36808C35 8.07937 35 10.3196 35 14.8V21.2C35 25.6804 35 27.9206 34.1281 29.6319C33.3611 31.1372 32.1372 32.3611 30.6319 33.1281C28.9206 34 26.6804 34 22.2 34H15.8C11.3196 34 9.07937 34 7.36808 33.1281C5.86278 32.3611 4.63893 31.1372 3.87195 29.6319C3 27.9206 3 25.6804 3 21.2V14.8Z" fill="white"/>
+                      <path d="M3 14.8C3 10.3196 3 8.07937 3.87195 6.36808C4.63893 4.86278 5.86278 3.63893 7.36808 2.87195C9.07937 2 11.3196 2 15.8 2H22.2C26.6804 2 28.9206 2 30.6319 2.87195C32.1372 3.63893 33.3611 4.86278 34.1281 6.36808C35 8.07937 35 10.3196 35 14.8V21.2C35 25.6804 35 27.9206 34.1281 29.6319C33.3611 31.1372 32.1372 32.3611 30.6319 33.1281C28.9206 34 26.6804 34 22.2 34H15.8C11.3196 34 9.07937 34 7.36808 33.1281C5.86278 32.3611 4.63893 31.1372 3.87195 29.6319C3 27.9206 3 25.6804 3 21.2V14.8Z" fill="currentColor"/>
                       <path d="M3 14.8C3 10.3196 3 8.07937 3.87195 6.36808C4.63893 4.86278 5.86278 3.63893 7.36808 2.87195C9.07937 2 11.3196 2 15.8 2H22.2C26.6804 2 28.9206 2 30.6319 2.87195C32.1372 3.63893 33.3611 4.86278 34.1281 6.36808C35 8.07937 35 10.3196 35 14.8V21.2C35 25.6804 35 27.9206 34.1281 29.6319C33.3611 31.1372 32.1372 32.3611 30.6319 33.1281C28.9206 34 26.6804 34 22.2 34H15.8C11.3196 34 9.07937 34 7.36808 33.1281C5.86278 32.3611 4.63893 31.1372 3.87195 29.6319C3 27.9206 3 25.6804 3 21.2V14.8Z" fill="url(#paint0_logo)" fill-opacity="0.2"/>
                     </g>
                   </g>
@@ -164,60 +231,31 @@ async function onSubmitNewsletter() {
         </div>
       </div>
 
-      <!-- Hero Section -->
+      <!-- Hero Content -->
       <section class="relative py-16 md:py-24">
         <div class="mx-auto w-full max-w-container px-4 md:px-8">
-          <div class="mx-auto flex max-w-5xl flex-col md:items-center md:text-center">
-            <ULink href="#" class="rounded-full outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2">
-              <UBadge
-                variant="subtle"
-                color="brand"
-                class="cursor-pointer transition duration-100 ease-linear hover:bg-brand-100 py-1 pr-2 pl-1 text-sm font-medium hidden md:flex"
-              >
-                <UBadge variant="solid" color="brand" size="sm" class="mr-2">We're hiring!</UBadge>
-                Join our design team
-                <Icon name="lucide:arrow-right" class="ml-1 size-4 text-brand-500" />
-              </UBadge>
-              <UBadge
-                variant="subtle"
-                color="brand"
-                size="sm"
-                class="cursor-pointer transition duration-100 ease-linear hover:bg-brand-100 py-1 pr-2 pl-1 text-xs font-medium md:hidden"
-              >
-                <UBadge variant="solid" color="brand" size="sm" class="mr-2">We're hiring!</UBadge>
-                Join our design team
-                <Icon name="lucide:arrow-right" class="ml-1 size-4 text-brand-500" />
-              </UBadge>
-            </ULink>
-            
-            <h1 class="mt-4 text-display-md font-medium text-primary md:text-display-lg lg:text-display-xl">
-              Creating stylish, functional and memorable spaces
+          <div class="flex max-w-5xl flex-col">
+            <h1 class="text-display-md font-medium text-primary md:text-display-lg lg:text-display-xl">
+              We design physical <span class="relative underline decoration-[3px] underline-offset-[0.218em] md:decoration-4 lg:decoration-4">experiences</span> that create more happy in the world
             </h1>
-            
-            <p class="mt-4 max-w-120 text-lg text-balance text-muted-500 dark:text-muted-400 md:mt-6 md:text-xl">
-              — We're a full-service interior design studio who specialize in simple and timeless spaces.
+            <p class="mt-4 max-w-sm text-lg text-muted-600 dark:text-muted-400 md:mt-6 md:text-xl">
+              — We're a full-service interior design agency who specialize in simple, useful and beautiful solutions for any space.
             </p>
-            
             <div class="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-12">
               <UButton variant="outline" color="muted" size="lg">
                 <Icon name="lucide:play" class="size-5" />
                 Showreel
               </UButton>
-              <UButton variant="solid" color="primary" size="lg">Chat to us</UButton>
+              <UButton variant="solid" color="primary" size="lg">Get in touch</UButton>
             </div>
           </div>
         </div>
         
         <div class="mx-auto mt-16 w-full max-w-container px-4 md:px-8">
           <img 
-            alt="Geo Shapes Desktop 04" 
-            src="https://www.untitledui.com/marketing/geo-shapes/geo-shapes-desktop-04.svg" 
-            class="hidden w-full object-cover sm:block"
-          />
-          <img 
-            alt="Geo Shapes Mobile 04" 
-            src="https://www.untitledui.com/marketing/geo-shapes/geo-shapes-mobile-04.svg" 
-            class="w-full object-cover sm:hidden"
+            alt="Smiling Girl" 
+            src="https://www.untitledui.com/marketing/smiling-girl-3.webp" 
+            class="h-60 w-full object-cover lg:h-129"
           />
         </div>
       </section>
@@ -227,15 +265,23 @@ async function onSubmitNewsletter() {
     <section class="bg-muted pb-16 md:pb-24">
       <div class="mx-auto max-w-container px-4 md:px-8">
         <div class="flex flex-col gap-8">
-          <p class="text-center text-md font-medium text-muted-500 dark:text-muted-400">Join 4,000+ companies already growing</p>
-          <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-6">
+          <p class="text-center text-md font-medium text-muted-500 dark:text-muted-400">We've worked with some great startups</p>
+          <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 md:gap-y-6">
             <img
-              v-for="company in companies"
+              v-for="company in companies.slice(0, 8)"
               :key="company.name"
               :alt="company.name"
               :src="company.color"
               class="h-9 md:h-10 dark:hidden"
             />
+            <img
+              v-for="company in companies.slice(8)"
+              :key="company.name"
+              :alt="company.name"
+              :src="company.color"
+              class="hidden h-9 md:inline-flex md:h-10 dark:hidden"
+            />
+            <!-- Dark mode versions -->
             <img
               v-for="company in companies"
               :key="`${company.name}-dark`"
@@ -248,72 +294,136 @@ async function onSubmitNewsletter() {
       </div>
     </section>
 
-    <!-- About Studio Section -->
-    <section class="bg-muted pb-16 md:pb-24">
-      <div class="mx-auto grid w-full max-w-container grid-cols-1 items-center gap-12 px-4 md:gap-16 md:px-8 lg:grid-cols-2">
-        <div class="flex flex-col">
-          <span class="text-sm font-semibold text-brand-600 dark:text-brand-400 md:text-md">Our studio</span>
-          <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">
-            Design that influences how people work, learn, live and experience the world.
-          </h2>
-          <div class="prose mt-8 md:prose-lg md:mt-12">
-            <p class="text-muted-600 dark:text-muted-400">Mi tincidunt elit, id quisque ligula ac diam, amet. Vel etiam suspendisse morbi eleifend faucibus eget vestibulum felis. Dictum quis montes, sit sit. Tellus aliquam enim urna, etiam.</p>
-            <p class="text-muted-600 dark:text-muted-400 mt-4">Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada.</p>
-            <p class="text-muted-600 dark:text-muted-400 mt-4">Elit nisi in eleifend sed nisi. Pulvinar at orci, proin imperdiet commodo consectetur convallis risus. Sed condimentum enim dignissim adipiscing faucibus consequat, urna. Viverra purus et erat auctor aliquam. Risus, volutpat vulputate posuere purus sit congue convallis aliquet.</p>
-            <p class="text-muted-600 dark:text-muted-400 mt-4">Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean.</p>
-          </div>
-          <div class="mt-8 flex flex-col-reverse gap-3 md:mt-12 md:flex-row">
-            <UButton variant="outline" color="muted" size="lg">Get in touch</UButton>
-            <UButton variant="solid" color="primary" size="lg">Our process</UButton>
-          </div>
-        </div>
-        <div class="h-60 lg:h-163.5">
-          <img src="https://www.untitledui.com/marketing/content-section-03.webp" class="size-full object-cover" alt="Abstract 3D holographic rectangles"/>
-        </div>
-      </div>
-    </section>
-
     <div class="mx-auto max-w-container px-4 md:px-8">
       <hr class="h-px w-full border-none bg-muted-200 dark:bg-muted-800"/>
     </div>
+
+    <!-- About Section -->
+    <section class="overflow-hidden bg-muted py-16 md:py-24">
+      <div class="mx-auto w-full max-w-container px-4 md:px-8">
+        <div class="flex w-full flex-col lg:max-w-3xl">
+          <h2 class="text-display-sm font-semibold text-primary md:text-display-md">Untitled is a full-service creative agency crafting human-centric digital experiences.</h2>
+          <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">We've been designing and building beautiful digital products since 2018.</p>
+        </div>
+        
+        <div class="mt-12 grid grid-cols-1 gap-12 md:mt-16 md:gap-16 lg:grid-cols-2 lg:items-center">
+          <ul class="flex flex-col">
+            <li>
+              <div class="relative flex cursor-pointer flex-col items-start gap-4 border-l-4 py-4 pl-5 transition duration-100 ease-linear hover:border-brand border-brand">
+                <div>
+                  <h3 class="text-lg font-semibold text-primary">Share team inboxes</h3>
+                  <p class="mt-1 text-md text-muted-600 dark:text-muted-400">Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.</p>
+                </div>
+                <ULink to="#" class="group inline-flex items-center gap-1.5 text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 font-semibold">
+                  Learn more
+                  <Icon name="lucide:arrow-right" class="size-5" />
+                </ULink>
+              </div>
+            </li>
+            <li>
+              <div class="relative flex cursor-pointer flex-col items-start gap-4 border-l-4 border-muted-200 dark:border-muted-800 py-4 pl-5 transition duration-100 ease-linear hover:border-brand">
+                <div>
+                  <h3 class="text-lg font-semibold text-primary">Deliver instant answers</h3>
+                  <p class="mt-1 text-md text-muted-600 dark:text-muted-400">An all-in-one customer service platform that helps you balance everything your customers need to be happy.</p>
+                </div>
+                <ULink to="#" class="group inline-flex items-center gap-1.5 text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 font-semibold">
+                  Learn more
+                  <Icon name="lucide:arrow-right" class="size-5" />
+                </ULink>
+              </div>
+            </li>
+            <li>
+              <div class="relative flex cursor-pointer flex-col items-start gap-4 border-l-4 border-muted-200 dark:border-muted-800 py-4 pl-5 transition duration-100 ease-linear hover:border-brand">
+                <div>
+                  <h3 class="text-lg font-semibold text-primary">Manage your team with reports</h3>
+                  <p class="mt-1 text-md text-muted-600 dark:text-muted-400">Measure what matters with Untitled's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.</p>
+                </div>
+                <ULink to="#" class="group inline-flex items-center gap-1.5 text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 font-semibold">
+                  Learn more
+                  <Icon name="lucide:arrow-right" class="size-5" />
+                </ULink>
+              </div>
+            </li>
+          </ul>
+          
+          <div class="relative -ml-4 flex h-90 w-screen items-start justify-center sm:w-auto lg:h-128">
+            <div class="absolute top-0 left-16 hidden w-max lg:block lg:h-168.5 lg:max-h-168.5">
+              <div class="size-full rounded-[9.03px] bg-muted p-[0.9px] shadow-lg ring-[0.56px] ring-muted-300 dark:ring-muted-700 ring-inset md:rounded-[26.95px] md:p-[3.5px] md:ring-[1.68px]">
+                <div class="size-full rounded-[7.9px] bg-muted p-0.5 shadow-modern-mockup-inner-md md:rounded-[23.58px] md:p-1 md:shadow-modern-mockup-inner-lg">
+                  <div class="relative size-full overflow-hidden rounded-[6.77px] bg-muted-50 ring-[0.56px] ring-muted-200 dark:ring-muted-800 md:rounded-[20.21px] md:ring-[1.68px]">
+                    <img src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-light-01.webp" alt="Desktop application dashboard" class="size-full object-cover object-left-top dark:hidden"/>
+                    <img src="https://www.untitledui.com/marketing/screen-mockups/dashboard-desktop-mockup-dark-01.webp" alt="Desktop application dashboard" class="size-full object-cover object-left-top not-dark:hidden"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-max max-w-70 lg:absolute lg:top-26 lg:left-0">
+              <div class="size-full rounded-[23.89px] bg-muted p-[3px] shadow-lg ring-[1.49px] ring-muted-300 dark:ring-muted-700 ring-inset">
+                <div class="size-full rounded-[20.91px] bg-muted p-1 shadow-modern-mockup-inner-lg">
+                  <div class="relative size-full overflow-hidden rounded-[17.92px] bg-muted-50 ring-[1.49px] ring-muted-200 dark:ring-muted-800">
+                    <img src="https://www.untitledui.com/marketing/screen-mockups/dashboard-mobile-mockup-light-01.webp" alt="Mobile application interface" class="size-full object-cover object-left-top dark:hidden"/>
+                    <img src="https://www.untitledui.com/marketing/screen-mockups/dashboard-mobile-mockup-dark-01.webp" alt="Mobile application interface" class="size-full object-cover object-left-top not-dark:hidden"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Testimonial Section -->
-    <section class="bg-muted py-16 lg:py-24">
-      <div class="mx-auto flex max-w-container flex-col gap-12 overflow-hidden px-4 md:gap-16 md:px-8 lg:flex-row lg:items-center">
-        <figure class="flex flex-col gap-8 md:gap-12 lg:flex-1">
-          <div class="flex flex-1 flex-col gap-6 md:gap-12">
-            <div aria-hidden="true" class="flex gap-1">
-              <Icon v-for="i in 5" :key="i" name="lucide:star" class="size-5 text-yellow-400 fill-yellow-400" />
+    <section class="bg-muted py-16 md:py-24">
+      <div class="mx-auto max-w-container px-4 md:px-8">
+        <figure class="flex w-full shrink-0 snap-start flex-col gap-8 text-center">
+          <img alt="Wildcrafted" src="https://www.untitledui.com/logos/logotype/color/wildcrafted.svg" class="h-10 dark:hidden" aria-hidden="true"/>
+          <img alt="Wildcrafted" src="https://www.untitledui.com/logos/logotype/white/wildcrafted.svg" class="h-10 opacity-85 not-dark:hidden" aria-hidden="true"/>
+          <blockquote class="text-display-sm font-medium text-primary md:text-display-lg">
+            We'll no doubt be working with Untitled on future projects. Finding the right agency to work with is a daunting task, but we absolutely found the right team and haven't looked back.
+          </blockquote>
+          <figcaption class="flex justify-center">
+            <div class="flex flex-col items-center gap-4">
+              <UAvatar src="https://www.untitledui.com/images/avatars/amelie-laurent?fm=webp&q=80" alt="Amelie Laurent" size="lg" />
+              <div class="flex flex-col gap-1">
+                <p class="text-lg font-semibold text-primary">Amélie Laurent</p>
+                <cite class="text-md text-muted-500 dark:text-muted-400 not-italic">Product Manager, Wildcrafted</cite>
+              </div>
             </div>
-            <blockquote class="origin-bottom-left text-display-sm font-medium text-balance text-primary will-change-transform sm:text-display-md md:text-display-lg">
-              We've really sped up our workflow using Untitled and haven't looked back.
-            </blockquote>
-          </div>
-          <div class="flex flex-col justify-between gap-6 md:flex-row">
-            <div class="flex origin-bottom-left gap-4 will-change-transform">
-              <UAvatar src="https://www.untitledui.com/images/avatars/sienna-hewitt?fm=webp&q=80" alt="Sienna Hewitt" size="lg" />
-              <figcaption class="flex flex-col gap-0.5">
-                <p class="text-lg font-semibold whitespace-nowrap text-primary">Sienna Hewitt</p>
-                <cite class="text-md whitespace-nowrap text-muted-500 dark:text-muted-400 not-italic">Project Manager, Warpspeed</cite>
-              </figcaption>
-            </div>
-            <div class="flex gap-4 md:gap-8">
-              <UButton variant="ghost" color="muted" class="group flex size-12 items-center justify-center rounded-full bg-muted ring-1 ring-muted-200 dark:ring-muted-800 transition duration-100 ease-linear hover:bg-muted-100 dark:hover:bg-muted-900 md:size-14">
-                <Icon name="lucide:arrow-left" class="size-5 text-muted-400 group-hover:text-muted-600 md:size-6" />
-              </UButton>
-              <UButton variant="ghost" color="muted" class="group flex size-12 items-center justify-center rounded-full bg-muted ring-1 ring-muted-200 dark:ring-muted-800 transition duration-100 ease-linear hover:bg-muted-100 dark:hover:bg-muted-900 md:size-14">
-                <Icon name="lucide:arrow-right" class="size-5 text-muted-400 group-hover:text-muted-600 md:size-6" />
-              </UButton>
-            </div>
-          </div>
+          </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-container px-4 md:px-8">
+      <hr class="h-px w-full border-none bg-muted-200 dark:bg-muted-800"/>
+    </div>
+
+    <!-- Capabilities Section -->
+    <section class="bg-muted py-16 md:py-24">
+      <div class="mx-auto w-full max-w-container px-4 md:px-8">
+        <div class="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
+          <span class="text-sm font-semibold text-brand-600 dark:text-brand-400 md:text-md">Our capabilities</span>
+          <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">We're here every step of the way</h2>
+          <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">We pride ourselves on our ability to challenge core assumptions, unpick legacy behaviors, streamline complex processes, and strike a balance between great design and functional development.</p>
+        </div>
         
-        <div class="grid h-122 w-[150%] grid-cols-[repeat(12,1fr)] grid-rows-[repeat(12,1fr)] gap-2 self-center sm:h-124 sm:w-[120%] md:w-auto md:gap-4 lg:flex-1">
-          <img src="https://www.untitledui.com/marketing/testimonial-abstract-image-01.webp" class="size-full object-cover" alt="Alisa Hester" style="grid-area: 3 / 3 / 7 / 7"/>
-          <img src="https://www.untitledui.com/marketing/smiling-girl-3.webp" class="size-full object-cover" alt="Alisa Hester" style="grid-area: 1 / 7 / 7 / 11"/>
-          <img src="https://www.untitledui.com/marketing/ai-woman-03.webp" class="size-full object-cover" alt="Alisa Hester" style="grid-area: 7 / 1 / 10 / 5"/>
-          <img src="https://www.untitledui.com/marketing/two-standing-women.webp" class="size-full object-cover" alt="Alisa Hester" style="grid-area: 7 / 5 / 13 / 9"/>
-          <img src="https://www.untitledui.com/marketing/smiling-girl-8.webp" class="size-full object-cover" alt="Alisa Hester" style="grid-area: 7 / 9 / 10 / 13"/>
+        <div class="mt-12 md:mt-16">
+          <ul class="grid w-full grid-cols-1 justify-items-center gap-x-8 gap-y-10 sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3">
+            <li v-for="capability in capabilities" :key="capability.title">
+              <div class="flex max-w-sm flex-col items-center gap-4 text-center">
+                <div class="relative shrink-0 items-center justify-center bg-muted shadow-xs ring-1 ring-muted-200 dark:ring-muted-800 size-12 rounded-[10px] text-muted-600 dark:text-muted-400 hidden md:inline-flex">
+                  <Icon :name="capability.icon" class="size-6" />
+                </div>
+                <div class="relative shrink-0 items-center justify-center bg-muted shadow-xs ring-1 ring-muted-200 dark:ring-muted-800 size-10 rounded-lg text-muted-600 dark:text-muted-400 inline-flex md:hidden">
+                  <Icon :name="capability.icon" class="size-5" />
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-primary">{{ capability.title }}</h3>
+                  <p class="mt-1 text-md text-muted-600 dark:text-muted-400">{{ capability.description }}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -322,95 +432,39 @@ async function onSubmitNewsletter() {
       <hr class="h-px w-full border-none bg-muted-200 dark:bg-muted-800"/>
     </div>
 
-    <!-- Stats Section -->
+    <!-- Contact Section -->
     <section class="bg-muted py-16 md:py-24">
       <div class="mx-auto max-w-container px-4 md:px-8">
-        <div class="flex flex-col gap-12 md:gap-16">
-          <div class="flex w-full flex-col md:max-w-3xl">
-            <p class="text-sm font-semibold text-brand-600 dark:text-brand-400 md:text-md">Launch faster</p>
-            <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">Creating memorable spaces</h2>
-            <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">We design physical experiences that create more happy in the world.</p>
-          </div>
-          <div class="grid grid-cols-1 gap-12 md:gap-8 lg:grid-cols-2">
-            <dl class="grid grid-cols-1 gap-8 self-center md:grid-cols-2 md:gap-y-16 md:pr-8">
-              <div class="flex flex-1 flex-col-reverse gap-3 text-center">
-                <div class="flex flex-col gap-1">
-                  <dt class="text-lg font-semibold text-primary">Projects completed</dt>
-                  <p class="text-md text-muted-600 dark:text-muted-400">We've helped build over 400 amazing projects.</p>
-                </div>
-                <dd class="text-display-lg font-semibold text-brand-700 dark:text-brand-300 md:text-display-xl">400+</dd>
+        <div class="flex w-full max-w-3xl flex-col">
+          <span class="text-sm font-semibold text-brand-600 dark:text-brand-400 md:text-md">Contact us</span>
+          <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">We'd love to hear from you</h2>
+          <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">Our friendly team is always here to chat.</p>
+        </div>
+        
+        <div class="mt-12 md:mt-16">
+          <ul class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <li v-for="item in contactItems" :key="item.title" class="flex h-full flex-col items-start bg-muted-100 dark:bg-muted-900 p-6">
+              <div class="relative flex shrink-0 items-center justify-center size-12 rounded-[10px] bg-brand-600 text-white">
+                <Icon :name="item.icon" class="size-6" />
               </div>
-              <div class="flex flex-1 flex-col-reverse gap-3 text-center">
-                <div class="flex flex-col gap-1">
-                  <dt class="text-lg font-semibold text-primary">Return on investment</dt>
-                  <p class="text-md text-muted-600 dark:text-muted-400">Our customers have reported an average of ~600% ROI.</p>
-                </div>
-                <dd class="text-display-lg font-semibold text-brand-700 dark:text-brand-300 md:text-display-xl">600%</dd>
-              </div>
-              <div class="flex flex-1 flex-col-reverse gap-3 text-center">
-                <div class="flex flex-col gap-1">
-                  <dt class="text-lg font-semibold text-primary">Global downloads</dt>
-                  <p class="text-md text-muted-600 dark:text-muted-400">Our free UI kit has been downloaded over 10k times.</p>
-                </div>
-                <dd class="text-display-lg font-semibold text-brand-700 dark:text-brand-300 md:text-display-xl">10k</dd>
-              </div>
-              <div class="flex flex-1 flex-col-reverse gap-3 text-center">
-                <div class="flex flex-col gap-1">
-                  <dt class="text-lg font-semibold text-primary">5-star reviews</dt>
-                  <p class="text-md text-muted-600 dark:text-muted-400">We're proud of our 5-star rating with over 200 reviews.</p>
-                </div>
-                <dd class="text-display-lg font-semibold text-brand-700 dark:text-brand-300 md:text-display-xl">200+</dd>
-              </div>
-            </dl>
-            <img src="https://www.untitledui.com/marketing/photographer-girl.webp" alt="Professional female photographer holding a camera in natural lighting" class="h-70 w-full object-cover md:h-140"/>
-          </div>
+              <h3 class="mt-12 text-lg font-semibold text-primary md:mt-16">{{ item.title }}</h3>
+              <p class="mt-1 text-md text-muted-600 dark:text-muted-400">{{ item.description }}</p>
+              <ULink :to="item.link" class="mt-4 text-brand-600 hover:text-brand-700 dark:text-brand-400 dark:hover:text-brand-300 font-semibold whitespace-pre md:mt-5">
+                {{ item.linkText }}
+              </ULink>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <div class="bg-muted">
-      <section class="bg-muted-100 dark:bg-muted-900 pt-16 pb-28 md:pt-24 md:pb-40">
-        <div class="mx-auto max-w-container px-4 md:px-8">
-          <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-24">
-            <div class="flex w-full max-w-3xl flex-col">
-              <span class="text-sm font-semibold text-brand-600 dark:text-brand-400 md:text-md">Contact us</span>
-              <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">Chat to our friendly team</h2>
-              <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">We'd love to hear from you! Please get in touch.</p>
-            </div>
-            <ul class="grid grid-cols-1 gap-10 md:gap-8">
-              <li class="flex items-start gap-4">
-                <Icon name="lucide:map-pin" class="size-6 pt-0.5 text-brand-500" />
-                <div>
-                  <h3 class="text-lg font-semibold text-primary">Melbourne</h3>
-                  <p class="mt-1 text-md whitespace-pre text-muted-600 dark:text-muted-400 md:whitespace-normal">100 Flinders Street, <br>Melbourne VIC 3000 AU</p>
-                </div>
-              </li>
-              <li class="flex items-start gap-4">
-                <Icon name="lucide:map-pin" class="size-6 pt-0.5 text-brand-500" />
-                <div>
-                  <h3 class="text-lg font-semibold text-primary">Sydney</h3>
-                  <p class="mt-1 text-md whitespace-pre text-muted-600 dark:text-muted-400 md:whitespace-normal">100 George Street, <br>Sydney NSW 2000 AU</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      
-      <section class="-mt-16 pb-16 md:-mt-24 md:pb-24">
-        <div class="mx-auto max-w-container px-4 md:px-8">
-          <img src="https://www.untitledui.com/marketing/smiling-girl-3.webp" class="h-60 w-full object-cover shadow-3xl md:h-120 lg:h-140" alt="Team discussing a topic"/>
-        </div>
-      </section>
-    </div>
-
     <!-- Newsletter Section -->
-    <section class="bg-muted pb-16 md:pb-24">
+    <section class="bg-muted-100 dark:bg-muted-900 py-16 md:py-24">
       <div class="mx-auto max-w-container px-4 md:px-8">
-        <div class="flex flex-col items-center rounded-2xl bg-muted-100 dark:bg-muted-900 px-6 py-10 text-center lg:p-16">
-          <h2 class="text-display-sm font-semibold text-primary xl:text-display-md">Still thinking <br class="md:hidden"/> about it?</h2>
-          <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 lg:text-xl">Sign up for our newsletter and get 10% off your next purchase.</p>
+        <div class="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
+          <h1 class="text-display-sm font-semibold text-primary md:text-display-md">We'll send you a nice letter once per week</h1>
+          <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">No spam. Just the latest releases and tips, interesting articles, and exclusive interviews with great people.</p>
+          
           <form class="mt-8 flex w-full flex-col gap-4 md:max-w-120 md:flex-row" @submit.prevent="onSubmitNewsletter">
             <UInput
               v-model="newsletterEmail"
@@ -421,7 +475,7 @@ async function onSubmitNewsletter() {
               class="flex-1"
             >
               <template #description>
-                <span>Read about our <ULink href="#" class="rounded-xs underline underline-offset-3">privacy policy</ULink>.</span>
+                <span>We care about your data in our <ULink href="#" class="rounded-xs underline underline-offset-3">privacy policy</ULink>.</span>
               </template>
             </UInput>
             <UButton type="submit" variant="solid" color="primary" size="lg" :loading="isLoading">
@@ -435,35 +489,27 @@ async function onSubmitNewsletter() {
     <!-- Footer -->
     <footer class="bg-muted py-12 md:pt-16">
       <div class="mx-auto max-w-container px-4 md:px-8">
-        <div class="flex flex-col gap-8 md:items-center">
-          <div class="flex items-center justify-start overflow-visible h-7 w-min shrink-0">
-            <svg viewBox="0 0 38 38" fill="none" class="size-8 origin-center scale-[1.2] aspect-square h-full w-auto shrink-0">
-              <!-- Footer logo SVG -->
-            </svg>
-            <div class="aspect-[0.3] h-full"></div>
-            <svg viewBox="0 0 97 32" fill="none" class="aspect-[3] h-full shrink-0">
-              <!-- Footer text logo SVG -->
-            </svg>
+        <div class="flex flex-col md:items-center md:text-center">
+          <svg viewBox="0 0 38 38" fill="none" class="size-8 origin-center scale-[1.2] drop-shadow">
+            <!-- Footer logo SVG -->
+          </svg>
+          <h2 class="mt-8 text-display-xs font-semibold text-primary md:mt-12 md:text-display-sm">Let's get started on something great</h2>
+          <p class="mt-2 text-md text-muted-600 dark:text-muted-400 md:mt-4 md:text-xl">Join over 4,000+ startups already growing with Untitled.</p>
+          <div class="mt-8 flex flex-col-reverse gap-3 md:mt-12 md:flex-row">
+            <UButton variant="outline" color="muted" size="lg">
+              <Icon name="lucide:play" class="size-5" />
+              View demo
+            </UButton>
+            <UButton variant="solid" color="primary" size="lg">Get started</UButton>
           </div>
-          
-          <nav>
-            <ul class="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-[repeat(6,max-content)]">
-              <li><ULink to="#" class="text-muted-500 hover:text-muted-700 dark:text-muted-400 dark:hover:text-muted-200 text-sm font-semibold">Overview</ULink></li>
-              <li><ULink to="#" class="text-muted-500 hover:text-muted-700 dark:text-muted-400 dark:hover:text-muted-200 text-sm font-semibold">Features</ULink></li>
-              <li><ULink to="#" class="text-muted-500 hover:text-muted-700 dark:text-muted-400 dark:hover:text-muted-200 text-sm font-semibold">Pricing</ULink></li>
-              <li><ULink to="#" class="text-muted-500 hover:text-muted-700 dark:text-muted-400 dark:hover:text-muted-200 text-sm font-semibold">Careers</ULink></li>
-              <li><ULink to="#" class="text-muted-500 hover:text-muted-700 dark:text-muted-400 dark:hover:text-muted-200 text-sm font-semibold">Help</ULink></li>
-              <li><ULink to="#" class="text-muted-500 hover:text-muted-700 dark:text-muted-400 dark:hover:text-muted-200 text-sm font-semibold">Privacy</ULink></li>
-            </ul>
-          </nav>
         </div>
         
         <div class="mt-12 flex flex-col-reverse justify-between gap-4 border-t border-muted-200 dark:border-muted-800 pt-8 md:mt-16 md:flex-row md:gap-6">
           <p class="text-sm text-muted-400 dark:text-muted-500">© 2077 Untitled UI. All rights reserved.</p>
-          <ul class="flex gap-4">
-            <li><ULink to="#" class="text-sm text-muted-400 hover:text-muted-600 dark:text-muted-500 dark:hover:text-muted-300">Terms</ULink></li>
-            <li><ULink to="#" class="text-sm text-muted-400 hover:text-muted-600 dark:text-muted-500 dark:hover:text-muted-300">Privacy</ULink></li>
-            <li><ULink to="#" class="text-sm text-muted-400 hover:text-muted-600 dark:text-muted-500 dark:hover:text-muted-300">Cookies</ULink></li>
+          <ul class="flex gap-3">
+            <li><ULink to="#" class="rounded-xs text-sm text-muted-400 hover:text-muted-600 dark:text-muted-500 dark:hover:text-muted-300">Terms</ULink></li>
+            <li><ULink to="#" class="rounded-xs text-sm text-muted-400 hover:text-muted-600 dark:text-muted-500 dark:hover:text-muted-300">Privacy</ULink></li>
+            <li><ULink to="#" class="rounded-xs text-sm text-muted-400 hover:text-muted-600 dark:text-muted-500 dark:hover:text-muted-300">Cookies</ULink></li>
           </ul>
         </div>
       </div>
