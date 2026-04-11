@@ -1,28 +1,29 @@
 <script setup lang="ts">
-import AboutSection from '../components/landingpage15/AboutSection.vue'
-import AppFooter from '../components/landingpage15/AppFooter.vue'
-import AppHeader from '../components/landingpage15/AppHeader.vue'
-import ContactFormSection from '../components/landingpage15/ContactFormSection.vue'
-import HeroSection from '../components/landingpage15/HeroSection.vue'
-import StatsSection from '../components/landingpage15/StatsSection.vue'
-import TestimonialSection from '../components/landingpage15/TestimonialSection.vue'
-import TrustedBy from '../components/landingpage15/TrustedBy.vue'
+import AboutSection from '../components/landingpage16/AboutSection.vue'
+import AppFooter from '../components/landingpage16/AppFooter.vue'
+import AppHeader from '../components/landingpage16/AppHeader.vue'
+import CapabilitiesSection from '../components/landingpage16/CapabilitiesSection.vue'
+import ContactSection from '../components/landingpage16/ContactSection.vue'
+import HeroSection from '../components/landingpage16/HeroSection.vue'
+import NewsletterSection from '../components/landingpage16/NewsletterSection.vue'
+import TestimonialSection from '../components/landingpage16/TestimonialSection.vue'
+import TrustedBy from '../components/landingpage16/TrustedBy.vue'
 </script>
 
 <template>
   <div class="bg-muted">
-    <div class="relative overflow-hidden bg-brand-700 dark:bg-brand-900">
+    <div class="relative overflow-hidden bg-muted">
       <img
-        alt="Grid of dots"
+        alt="Grid background pattern"
         aria-hidden="true"
-        src="https://www.untitledui.com/patterns/light/grid-dot-sm-desktop.svg"
-        class="pointer-events-none absolute top-0 left-1/2 z-0 hidden max-w-none -translate-x-1/2 opacity-20 md:block"
+        src="https://www.untitledui.com/patterns/light/grid-md-desktop.svg"
+        class="pointer-events-none absolute top-0 left-1/2 z-0 hidden max-w-none -translate-x-1/2 dark:brightness-[0.2] md:block"
       >
       <img
-        alt="Grid of dots"
+        alt="Grid background pattern"
         aria-hidden="true"
-        src="https://www.untitledui.com/patterns/light/grid-dot-sm-mobile.svg"
-        class="pointer-events-none absolute top-0 left-1/2 z-0 max-w-none -translate-x-1/2 opacity-20 md:hidden"
+        src="https://www.untitledui.com/patterns/light/grid-sm-mobile.svg"
+        class="pointer-events-none absolute top-0 left-1/2 z-0 max-w-none -translate-x-1/2 dark:brightness-[0.2] md:hidden"
       >
 
       <AppHeader />
@@ -32,8 +33,9 @@ import TrustedBy from '../components/landingpage15/TrustedBy.vue'
     <TrustedBy />
     <AboutSection />
     <TestimonialSection />
-    <StatsSection />
-    <ContactFormSection />
+    <CapabilitiesSection />
+    <ContactSection />
+    <NewsletterSection />
     <AppFooter />
   </div>
 </template>
