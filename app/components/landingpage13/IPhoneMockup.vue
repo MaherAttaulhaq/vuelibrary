@@ -11,7 +11,9 @@
       <image id="screen-image-light" width="750" height="1624" href="https://www.untitledui.com/marketing/screen-mockups/dashboard-mobile-mockup-light-01.webp" class="dark:hidden"/>
       <image id="screen-image-dark" width="750" height="1624" href="https://www.untitledui.com/marketing/screen-mockups/dashboard-mobile-mockup-dark-01.webp" class="not-dark:hidden"/>
     </defs>
-    
     <g clip-path="url(#status-bar-box)">
       <rect width="281.69" height="609.953" transform="translate(15.7744 14.2725)" class="fill-white dark:fill-black"/>
-      <rect width="281.69" height="609.953
+      <rect width="281.69" height="609.953" transform="translate(15.7744 14.2725)" class="fill-screen-mockup"/>
+    </g>
+  </svg>
+</template>

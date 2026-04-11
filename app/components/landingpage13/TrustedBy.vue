@@ -10,7 +10,7 @@ const companies = [
 </script>
 
 <template>
-  <section class="bg-secondary py-16 md:py-24">
+  <section class="bg-muted py-16 md:py-24">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex flex-col gap-8">
         <p class="text-center text-md font-medium text-tertiary">Official partner of these companies</p>
