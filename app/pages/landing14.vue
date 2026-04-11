@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import AppFooter from '../components/landing14/AppFooter.vue'
-import AppHeader from '../components/landing14/AppHeader.vue'
-import ContactSection from '../components/landing14/ContactSection.vue'
-import HeroSection from '../components/landing14/HeroSection.vue'
-import NewsletterSection from '../components/landing14/NewsletterSection.vue'
-import StatsSection from '../components/landing14/StatsSection.vue'
-import StudioSection from '../components/landing14/StudioSection.vue'
-import TestimonialSection from '../components/landing14/TestimonialSection.vue'
-import TrustedBy from '../components/landing14/TrustedBy.vue'
+import AppFooter from "../components/landingpage14/AppFooter.vue";
+import AppHeader from "../components/landingpage14/AppHeader.vue";
+import ContactSection from "../components/landingpage14/ContactSection.vue";
+import HeroSection from "../components/landingpage14/HeroSection.vue";
+import NewsletterSection from "../components/landingpage14/NewsletterSection.vue";
+import StatsSection from "../components/landingpage14/StatsSection.vue";
+import StudioSection from "../components/landingpage14/StudioSection.vue";
+import TestimonialSection from "../components/landingpage14/TestimonialSection.vue";
+import TrustedBy from "../components/landingpage14/TrustedBy.vue";
 </script>
 
 <template>
@@ -18,13 +18,13 @@ import TrustedBy from '../components/landing14/TrustedBy.vue'
         aria-hidden="true"
         src="https://www.untitledui.com/patterns/light/grid-dot-sm-desktop.svg"
         class="pointer-events-none absolute top-0 left-1/2 z-0 hidden max-w-none -translate-x-1/2 dark:brightness-[0.2] md:block"
-      >
+      />
       <img
         alt="Grid of dots"
         aria-hidden="true"
         src="https://www.untitledui.com/patterns/light/grid-dot-sm-mobile.svg"
         class="pointer-events-none absolute top-0 left-1/2 z-0 max-w-none -translate-x-1/2 dark:brightness-[0.2] md:hidden"
-      >
+      />
 
       <AppHeader />
       <HeroSection />
