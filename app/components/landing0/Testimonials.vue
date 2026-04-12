@@ -1,7 +1,7 @@
 <template>
   <section
     id="testimonials"
-    class="bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 px-4 py-16 sm:px-6 lg:px-8"
+    class="bg-muted px-4 py-16 sm:px-6 lg:px-8"
   >
     <div class="mx-auto max-w-6xl space-y-10">
       <div class="space-y-4 text-center">
@@ -11,10 +11,10 @@
         >
           Proof
         </UBadge>
-        <h2 class="text-3xl font-semibold text-white sm:text-4xl">
+        <h2 class="text-3xl font-semibold text-primary sm:text-4xl">
           Loved by thousands
         </h2>
-        <p class="text-base text-gray-300">
+        <p class="text-base text-default">
           Teams deploy this design system for product launches, analytics
           platforms, and high-impact marketing pages.
         </p>
@@ -23,17 +23,17 @@
         <UCard
           v-for="testimonial in testimonials"
           :key="testimonial.name"
-          class="border-white/5 bg-white/5 backdrop-blur transition hover:border-primary hover:bg-white/10"
+          class="border border-default bg-muted backdrop-blur transition hover:border-primary"
         >
-          <p class="text-sm leading-relaxed text-gray-200">
+          <p class="text-sm leading-relaxed text-default">
             "{{ testimonial.quote }}"
           </p>
           <template #footer>
-            <div class="border-t border-white/5 pt-4">
-              <p class="text-sm font-semibold text-white">
+            <div class="border-t border-default pt-4">
+              <p class="text-sm font-semibold text-primary">
                 {{ testimonial.name }}
               </p>
-              <p class="text-xs uppercase tracking-[0.4em] text-gray-400">
+              <p class="text-xs uppercase tracking-[0.4em] text-default">
                 {{ testimonial.company }}
               </p>
             </div>

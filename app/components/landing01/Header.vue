@@ -24,7 +24,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 
 <template>
   <UHeader
-    class="sticky top-0 z-50 border-b border-white/5 bg-gray-950/90 backdrop-blur"
+    class="sticky top-0 z-50 border-b border-border bg-muted/90 backdrop-blur"
   >
     <!-- LEFT (LOGO / TITLE) -->
     <template #title>
@@ -38,7 +38,7 @@ const items = computed<NavigationMenuItem[]>(() => [
     <!-- CENTER NAV -->
     <UNavigationMenu
       :items="items"
-      class="hidden text-sm text-gray-300 md:flex"
+      class="hidden text-sm md:flex"
     />
 
     <!-- RIGHT CTA -->

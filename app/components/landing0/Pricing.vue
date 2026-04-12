@@ -1,7 +1,7 @@
 <template>
   <section
     id="pricing"
-    class="px-4 py-16 sm:px-6 lg:px-8"
+    class="bg-muted px-4 py-16 sm:px-6 lg:px-8"
   >
     <div class="mx-auto max-w-6xl space-y-6 text-center">
       <UBadge
@@ -11,11 +11,11 @@
         Pricing
       </UBadge>
 
-      <h2 class="text-3xl font-semibold text-white sm:text-4xl">
+      <h2 class="text-3xl font-semibold text-primary sm:text-4xl">
         Pick the plan that fits your launch
       </h2>
 
-      <p class="text-base text-gray-300">
+      <p class="text-base text-default">
         Transparent pricing with upgrade paths for fast-growing teams and
         complete enterprise deployments.
       </p>

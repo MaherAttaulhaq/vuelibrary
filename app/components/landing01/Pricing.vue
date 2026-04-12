@@ -37,14 +37,14 @@ const pricing = [
 <template>
   <section
     id="pricing"
-    class="border-b border-white/5 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 px-4 py-16 sm:px-6 lg:px-8"
+    class="border-b border-border bg-muted px-4 py-16 sm:px-6 lg:px-8"
   >
     <div class="mx-auto max-w-6xl space-y-6 text-center">
       <UBadge color="neutral" variant="subtle" class="text-xs uppercase tracking-[0.4em]">
         Pricing
       </UBadge>
 
-      <h2 class="text-3xl font-semibold text-white sm:text-4xl">
+      <h2 class="text-3xl font-semibold text-primary sm:text-4xl">
         Pick the tier that matches your rollout
       </h2>
     </div>

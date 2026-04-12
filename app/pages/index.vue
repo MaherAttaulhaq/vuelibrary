@@ -52,7 +52,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <UContainer class="min-h-screen bg-default text-gray-100">
+  <UContainer class="min-h-screen bg-muted text-primary">
     <!-- Header with Nuxt UI components -->
     <Landing0Header />
 
@@ -72,7 +72,9 @@ const items = computed<NavigationMenuItem[]>(() => [
       <Landing0CustomSolutions />
 
       <!-- FAQs Section -->
-      <Landing0FAQs />
+      <Landing0Faqs />
+      <!-- Footer -->
+      <Landing0Footer />
     </main>
   </UContainer>
 </template>

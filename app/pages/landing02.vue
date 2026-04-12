@@ -13,7 +13,7 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
 
 <template>
   <UApp>
-    <div class="min-h-screen bg-default text-default">
+    <div class="min-h-screen bg-muted">
       <!-- Header -->
       <Landing02Header />
 

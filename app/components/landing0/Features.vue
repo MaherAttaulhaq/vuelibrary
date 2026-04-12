@@ -1,7 +1,7 @@
 <template>
   <section
     id="features"
-    class="bg-gray-950 px-4 py-16 sm:px-6 lg:px-8"
+    class="bg-muted px-4 py-16 sm:px-6 lg:px-8"
   >
     <div class="mx-auto max-w-6xl space-y-6 text-center">
       <UBadge
@@ -10,10 +10,10 @@
       >
         Capabilities
       </UBadge>
-      <h2 class="text-3xl font-semibold text-white sm:text-4xl">
+      <h2 class="text-3xl font-semibold text-primary sm:text-4xl">
         Design systems built for modern product teams
       </h2>
-      <p class="text-base text-gray-300">
+      <p class="text-base text-default">
         Every template is wired for developer-friendly tooling, realtime
         experimentation, and craftsmanship-level polish.
       </p>
@@ -24,13 +24,13 @@
       <UCard
         v-for="feature in featureHighlights"
         :key="feature.title"
-        class="border-white/5 bg-white/5 transition hover:border-primary hover:bg-white/10"
+        class="border border-default bg-muted transition hover:border-primary"
         :ui="{ body: 'p-5' }"
       >
-        <h3 class="text-lg font-semibold text-white">
+        <h3 class="text-lg font-semibold text-primary">
           {{ feature.title }}
         </h3>
-        <p class="mt-3 text-sm leading-relaxed text-gray-300">
+        <p class="mt-3 text-sm leading-relaxed text-default">
           {{ feature.description }}
         </p>
       </UCard>
