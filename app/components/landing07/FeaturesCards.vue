@@ -1,12 +1,12 @@
 <template>
-  <section class="bg-bg-secondary py-16 md:py-24">
+  <section class="bg-muted py-16 md:py-24">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex flex-col items-center gap-12 text-center">
         <div class="flex max-w-2xl flex-col">
-          <h2 class="text-display-md font-semibold text-text-primary md:text-display-lg">
+          <h2 class="text-display-md font-semibold text-primary md:text-display-lg">
             Features to help your team succeed
           </h2>
-          <p class="mt-4 text-xl text-text-tertiary">
+          <p class="mt-4 text-xl">
             Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups.
           </p>
         </div>

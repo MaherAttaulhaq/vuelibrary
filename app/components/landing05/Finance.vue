@@ -11,7 +11,7 @@
         <h2 class="mt-3 text-3xl font-semibold text-primary md:text-4xl">
           All-in-one finance for any business
         </h2>
-        <p class="mt-4 text-lg text-secondary md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg md:mt-5 md:text-xl">
           Get a deposit account, credit card, and spend management software—in one refreshingly easy solution. No fees or minimums.
         </p>
       </div>

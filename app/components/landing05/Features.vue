@@ -11,7 +11,7 @@
         <h2 class="mt-3 text-3xl font-semibold text-primary md:text-4xl">
           The only card you'll ever need. Simple.
         </h2>
-        <p class="mt-4 text-lg text-secondary md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg md:mt-5 md:text-xl">
           Spend smarter, lower your bills, get cashback on everything you buy, and unlock credit to grow your business.
         </p>
       </div>
@@ -23,7 +23,7 @@
               <h3 class="text-lg font-semibold text-primary">
                 Share team inboxes
               </h3>
-              <p class="mt-1 text-md text-secondary">
+              <p class="mt-1 text-md">
                 Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.
               </p>
             </div>
@@ -40,7 +40,7 @@
               <h3 class="text-lg font-semibold text-primary">
                 Deliver instant answers
               </h3>
-              <p class="mt-1 text-md text-secondary">
+              <p class="mt-1 text-md">
                 An all-in-one customer service platform that helps you balance everything your customers need to be happy.
               </p>
             </div>
@@ -57,7 +57,7 @@
               <h3 class="text-lg font-semibold text-primary">
                 Manage your team with reports
               </h3>
-              <p class="mt-1 text-md text-secondary">
+              <p class="mt-1 text-md">
                 Measure what matters with Untitled's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.
               </p>
             </div>

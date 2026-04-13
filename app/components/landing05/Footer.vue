@@ -24,7 +24,7 @@
               />
             </svg>
           </div>
-          <p class="text-md text-secondary">
+          <p class="text-md">
             Design amazing digital experiences that create more happy in the world.
           </p>
           <div class="flex items-center gap-2">
@@ -40,7 +40,7 @@
               <p class="text-sm font-semibold text-primary">
                 Best Design Tool
               </p>
-              <p class="text-xs font-medium text-secondary">
+              <p class="text-xs font-medium">
                 2,000+ reviews
               </p>
             </div>
@@ -53,7 +53,7 @@
               v-for="section in footerSections"
               :key="section.title"
             >
-              <h4 class="text-sm font-semibold text-tertiary">
+              <h4 class="text-sm font-semibold text-muted-foreground">
                 {{ section.title }}
               </h4>
               <ul class="mt-4 flex flex-col gap-3">
@@ -63,7 +63,7 @@
                 >
                   <ULink
                     :to="link.href"
-                    class="text-sm text-secondary hover:text-primary"
+                    class="text-sm hover:text-primary"
                   >{{ link.label }}</ULink>
                 </li>
               </ul>
@@ -75,7 +75,7 @@
       <UDivider class="my-8" />
 
       <div class="flex flex-col-reverse justify-between gap-6">
-        <p class="text-sm text-tertiary">
+        <p class="text-sm text-muted-foreground">
           © 2077 Untitled UI. All rights reserved.
         </p>
         <div class="flex gap-6">
@@ -83,7 +83,7 @@
             v-for="social in socialLinks"
             :key="social.name"
             :to="social.href"
-            class="text-tertiary hover:text-secondary"
+            class="text-muted-foreground hover:text-primary"
           >
             <UIcon
               :name="social.icon"

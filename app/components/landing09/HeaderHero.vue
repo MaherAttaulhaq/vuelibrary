@@ -47,16 +47,14 @@
             <span class="mr-2 rounded-full bg-primary px-2 py-0.5 text-xs text-white">
               What's new?
             </span>
-            <span class="text-secondary">
-              Instantly issue virtual cards
-            </span>
+            Instantly issue virtual cards
           </UBadge>
 
           <h1 class="mt-4 text-display-lg font-semibold text-primary">
             No more business banking headaches
           </h1>
 
-          <p class="mt-4 max-w-120 text-lg text-secondary">
+          <p class="mt-4 max-w-120 text-lg">
             Untitled is a next-gen financial technology company reinventing banking.
           </p>
 
@@ -64,7 +62,7 @@
             <UButton
               size="lg"
               variant="outline"
-              color="secondary"
+              color="neutral"
             >
               <Icon
                 name="lucide:play"
@@ -92,7 +90,7 @@
               style="transform: scale(0.84) rotate(60deg) translate(38px, -53px)"
             >
               <UCard
-                class="h-[190px] w-[316px] backdrop-blur-[6px] bg-secondary/40 ring-1 ring-white/30"
+                class="h-[190px] w-[316px] backdrop-blur-[6px] bg-muted/40 ring-1 ring-border"
                 :ui="{ body: 'p-4 flex flex-col justify-between h-full' }"
               >
                 <!-- Top -->
@@ -153,7 +151,7 @@
               style="transform: scale(0.84) rotate(30deg) translate(-23px, 24px)"
             >
               <UCard
-                class="h-[190px] w-[316px] bg-primary ring-1 ring-white/30"
+                class="h-[190px] w-[316px] bg-gradient-to-br from-purple-700 to-purple-900 ring-1 ring-white/30"
                 :ui="{ body: 'p-4 flex flex-col justify-between h-full text-white' }"
               >
                 <!-- Top -->

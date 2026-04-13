@@ -18,7 +18,7 @@
             </svg>
             <span class="ml-2 text-xl font-semibold text-primary">Untitled</span>
           </div>
-          <p class="text-md text-tertiary">Design amazing digital experiences that create more happy in the world.</p>
+          <p class="text-md">Design amazing digital experiences that create more happy in the world.</p>
         </div>
 
         <!-- Navigation and Newsletter -->
@@ -29,7 +29,7 @@
               <h4 class="text-sm font-semibold text-primary">{{ category.title }}</h4>
               <ul class="mt-4 flex flex-col gap-3">
                 <li v-for="item in category.items" :key="item.label">
-                  <a :href="item.href" class="text-md text-tertiary hover:text-primary transition duration-100 ease-linear">
+                  <a :href="item.href" class="text-md hover:text-primary transition duration-100 ease-linear">
                     {{ item.label }}
                   </a>
                 </li>
@@ -57,11 +57,11 @@
       </div>
 
       <!-- Bottom Bar -->
-      <div class="mt-12 flex flex-col-reverse justify-between gap-4 border-t border-secondary pt-8 md:mt-16 md:flex-row md:gap-6">
-        <p class="text-sm text-quaternary">© 2077 Untitled UI. All rights reserved.</p>
+      <div class="mt-12 flex flex-col-reverse justify-between gap-4 border-t border-border pt-8 md:mt-16 md:flex-row md:gap-6">
+        <p class="text-sm text-muted-foreground">© 2077 Untitled UI. All rights reserved.</p>
         <ul class="flex gap-4">
           <li v-for="link in legalLinks" :key="link.title">
-            <a :href="link.href" class="text-md text-quaternary hover:text-tertiary transition duration-100 ease-linear">
+            <a :href="link.href" class="text-md text-muted-foreground hover:text-primary transition duration-100 ease-linear">
               {{ link.title }}
             </a>
           </li>

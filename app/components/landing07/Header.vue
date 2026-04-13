@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky top-0 z-50 bg-bg-primary/80 backdrop-blur-md">
+  <header class="sticky top-0 z-50 bg-muted/80 backdrop-blur-md">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center gap-8">
@@ -36,7 +36,7 @@
       <!-- Mobile menu -->
       <div
         v-if="isMobileMenuOpen"
-        class="border-t border-border-secondary py-4 lg:hidden"
+        class="border-t border-border py-4 lg:hidden"
       >
         <nav>
           <ul class="flex flex-col gap-4">

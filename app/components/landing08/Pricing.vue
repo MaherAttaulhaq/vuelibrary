@@ -1,12 +1,12 @@
 <template>
-  <section class="bg-bg-secondary py-16 md:py-24">
+  <section class="bg-muted/50 py-16 md:py-24">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="mx-auto flex w-full max-w-2xl flex-col xl:mx-0 xl:max-w-3xl">
-        <span class="text-sm font-semibold text-text-brand-secondary md:text-md">Upgrade</span>
-        <h2 class="mt-3 text-display-sm font-semibold text-text-primary md:text-display-md">
+        <span class="text-sm font-semibold text-primary md:text-md">Upgrade</span>
+        <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">
           Unlock more features
         </h2>
-        <p class="mt-4 text-lg text-text-tertiary md:mt-5">
+        <p class="mt-4 text-lg md:mt-5">
           Simple, transparent pricing that grows with you. Try any plan free for 30 days.
         </p>
       </div>
@@ -31,10 +31,10 @@
                 class="flex md:hidden"
               />
               <div class="pt-1.5 md:pt-2.5">
-                <h3 class="text-lg font-semibold text-text-primary md:text-xl">
+                <h3 class="text-lg font-semibold text-primary md:text-xl">
                   {{ item.title }}
                 </h3>
-                <p class="mt-1 text-md text-text-tertiary md:mt-2">
+                <p class="mt-1 text-md md:mt-2">
                   {{ item.subtitle }}
                 </p>
               </div>

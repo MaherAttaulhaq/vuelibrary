@@ -1,13 +1,13 @@
 <template>
-  <section class="bg-bg-primary pb-16 pt-8 md:pb-24 md:pt-16">
+  <section class="bg-muted pb-16 pt-8 md:pb-24 md:pt-16">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex flex-col gap-x-16 gap-y-8 lg:flex-row lg:items-center">
         <div class="flex max-w-2xl flex-1 flex-col">
-          <h1 class="text-display-lg font-bold text-text-primary md:text-display-xl">
+          <h1 class="text-display-lg font-bold text-primary md:text-display-xl">
             A better way to
-            <span class="text-text-brand-primary">send money</span>
+            <span class="text-primary">send money</span>
           </h1>
-          <p class="mt-6 text-xl text-text-tertiary md:text-2xl">
+          <p class="mt-6 text-xl md:text-2xl">
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">

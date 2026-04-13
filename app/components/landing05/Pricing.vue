@@ -12,7 +12,7 @@
         <h2 class="mt-3 text-3xl font-semibold text-primary md:text-4xl">
           Pricing as simple as our cards
         </h2>
-        <p class="mt-4 text-lg text-secondary md:mt-5">
+        <p class="mt-4 text-lg md:mt-5">
           Simple, transparent pricing that grows with you. Try any plan free for 30 days.
         </p>
       </div>
@@ -26,10 +26,10 @@
             :key="feature.title"
             class="flex gap-4"
           >
-            <div class="relative hidden shrink-0 items-center justify-center bg-muted-light shadow-xs ring-1 ring-muted-dark md:inline-flex size-12 rounded-[10px] text-secondary">
+            <div class="relative hidden shrink-0 items-center justify-center bg-muted-light shadow-xs ring-1 ring-muted-dark md:inline-flex size-12 rounded-[10px]">
               <UIcon
                 :name="feature.icon"
-                class="size-6"
+                class="size-6 text-primary"
               />
             </div>
 
@@ -37,7 +37,7 @@
               <h3 class="text-lg font-semibold text-primary md:text-xl">
                 {{ feature.title }}
               </h3>
-              <p class="mt-1 text-md text-secondary md:mt-2">
+              <p class="mt-1 text-md md:mt-2">
                 {{ feature.description }}
               </p>
             </div>

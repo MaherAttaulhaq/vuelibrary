@@ -5,7 +5,7 @@
       <div class="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
         <UBadge color="secondary" variant="subtle">Features</UBadge>
         <h2 class="mt-3 text-3xl font-semibold text-primary md:text-4xl">All you need to run your finances effectively</h2>
-        <p class="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg md:mt-5 md:text-xl">
           Open a full-featured account with virtual cards in less than 5 minutes.
         </p>
       </div>
@@ -18,7 +18,7 @@
             </div>
             <div>
               <h3 class="text-lg font-semibold text-primary">{{ feature.title }}</h3>
-              <p class="mt-1 text-md text-tertiary">{{ feature.description }}</p>
+              <p class="mt-1 text-md">{{ feature.description }}</p>
             </div>
           </UCard>
         </div>

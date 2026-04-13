@@ -3,7 +3,7 @@
     <div class="mx-auto flex w-full max-w-container flex-col items-start justify-between gap-8 px-4 md:px-8 lg:flex-row">
       <div>
         <h2 class="text-display-sm font-semibold text-primary md:text-display-md">Sign up for our newsletter</h2>
-        <p class="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg md:mt-5 md:text-xl">
           Be the first to know about releases and industry news and insights.
         </p>
       </div>

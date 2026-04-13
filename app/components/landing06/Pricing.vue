@@ -3,10 +3,10 @@
     <div class="mx-auto max-w-[1560px] px-4 md:px-8">
       <div class="flex flex-col gap-12 md:gap-16">
         <div class="flex flex-col gap-4 text-center">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 class="text-3xl font-bold tracking-tight text-primary md:text-4xl">
             Simple, transparent pricing
           </h2>
-          <p class="text-lg text-muted-foreground">
+          <p class="text-lg">
             Choose the plan that's right for you. Upgrade or cancel anytime.
           </p>
         </div>
@@ -19,12 +19,12 @@
           >
             <template #header>
               <div class="flex flex-col gap-2">
-                <h3 class="text-xl font-semibold">{{ plan.name }}</h3>
+                <h3 class="text-xl font-semibold text-primary">{{ plan.name }}</h3>
                 <div class="flex items-baseline gap-1">
-                  <span class="text-3xl font-bold">${{ plan.price }}</span>
-                  <span class="text-muted-foreground">/month</span>
+                  <span class="text-3xl font-bold text-primary">${{ plan.price }}</span>
+                  <span>/month</span>
                 </div>
-                <p class="text-sm text-muted-foreground">{{ plan.description }}</p>
+                <p>{{ plan.description }}</p>
               </div>
             </template>
             <div class="flex flex-col gap-4">

@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-bg-secondary py-12 md:pt-16">
+  <footer class="bg-muted border-t border-border py-12 md:pt-16">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex flex-col justify-between gap-x-8 gap-y-12 lg:flex-row">
         <div class="flex flex-col gap-8 md:items-start">
@@ -13,7 +13,7 @@
                 to="#"
                 variant="link"
                 label="Overview"
-                class="text-text-tertiary hover:text-text-tertiary_hover"
+                class="hover:text-primary"
               />
             </li>
             <li>
@@ -21,7 +21,7 @@
                 to="#"
                 variant="link"
                 label="Features"
-                class="text-text-tertiary hover:text-text-tertiary_hover"
+                class="hover:text-primary"
               />
             </li>
             <li>
@@ -29,7 +29,7 @@
                 to="#"
                 variant="link"
                 label="Pricing"
-                class="text-text-tertiary hover:text-text-tertiary_hover"
+                class="hover:text-primary"
               />
             </li>
             <li>
@@ -37,7 +37,7 @@
                 to="#"
                 variant="link"
                 label="Careers"
-                class="text-text-tertiary hover:text-text-tertiary_hover"
+                class="hover:text-primary"
               />
             </li>
             <li>
@@ -45,7 +45,7 @@
                 to="#"
                 variant="link"
                 label="Help"
-                class="text-text-tertiary hover:text-text-tertiary_hover"
+                class="hover:text-primary"
               />
             </li>
             <li>
@@ -53,15 +53,15 @@
                 to="#"
                 variant="link"
                 label="Privacy"
-                class="text-text-tertiary hover:text-text-tertiary_hover"
+                class="hover:text-primary"
               />
             </li>
           </ul>
         </nav>
       </div>
 
-      <div class="mt-12 flex flex-col-reverse justify-between gap-4 border-t border-border-secondary pt-8 md:mt-16 md:flex-row md:gap-6">
-        <p class="text-sm text-text-quaternary">
+      <div class="mt-12 flex flex-col-reverse justify-between gap-4 border-t border-border pt-8 md:mt-16 md:flex-row md:gap-6">
+        <p class="text-sm">
           © 2077 Untitled UI. All rights reserved.
         </p>
         <ul class="flex gap-4">
@@ -70,7 +70,6 @@
               to="#"
               variant="link"
               label="Terms"
-              class="text-text-quaternary hover:text-text-tertiary"
             />
           </li>
           <li>
@@ -78,7 +77,6 @@
               to="#"
               variant="link"
               label="Privacy"
-              class="text-text-quaternary hover:text-text-tertiary"
             />
           </li>
           <li>
@@ -86,7 +84,6 @@
               to="#"
               variant="link"
               label="Cookies"
-              class="text-text-quaternary hover:text-text-tertiary"
             />
           </li>
         </ul>

@@ -3,10 +3,10 @@
     <div class="mx-auto max-w-[1560px] px-4 md:px-8">
       <div class="flex flex-col gap-12 md:gap-16">
         <div class="flex flex-col gap-4 text-center">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 class="text-3xl font-bold tracking-tight text-primary md:text-4xl">
             Everything you need to succeed online.
           </h2>
-          <p class="text-lg text-muted-foreground">
+          <p class="text-lg">
             Powerful, self-serve product and growth analytics to help you convert, engage, and retain more.
           </p>
         </div>
@@ -20,8 +20,8 @@
               <component :is="feature.icon" class="h-6 w-6 text-primary" />
             </div>
             <div class="flex flex-col gap-2">
-              <h3 class="text-xl font-semibold">{{ feature.title }}</h3>
-              <p class="text-muted-foreground">{{ feature.description }}</p>
+              <h3 class="text-xl font-semibold text-primary">{{ feature.title }}</h3>
+              <p>{{ feature.description }}</p>
             </div>
           </div>
         </div>

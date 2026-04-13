@@ -7,7 +7,7 @@
             <h2 class="text-display-sm font-semibold text-primary md:text-display-md">
               Join over 4,000+ startups growing with Untitled
             </h2>
-            <p class="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
+            <p class="mt-4 text-lg md:mt-5 md:text-xl">
               Start your 30-day free trial today.
             </p>
           </div>

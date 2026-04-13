@@ -3,10 +3,10 @@
     <div class="mx-auto max-w-[1560px] px-4 md:px-8">
       <div class="flex flex-col gap-8 text-center">
         <div class="flex flex-col gap-4">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 class="text-3xl font-bold tracking-tight text-primary md:text-4xl">
             Stay in the loop
           </h2>
-          <p class="text-lg text-muted-foreground">
+          <p class="text-lg">
             Join our newsletter to stay up to date with features and releases.
           </p>
         </div>
@@ -17,11 +17,11 @@
             type="email"
             class="flex-1"
           />
-          <UButton size="lg">
+          <UButton size="lg" color="primary">
             Subscribe
           </UButton>
         </div>
-        <p class="text-sm text-muted-foreground">
+        <p class="text-sm">
           We care about your data. Read our
           <NuxtLink to="#" class="underline hover:no-underline">
             privacy policy

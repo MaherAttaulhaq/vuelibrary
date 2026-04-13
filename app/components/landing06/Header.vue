@@ -6,7 +6,7 @@
     }"
   >
     <template #left>
-      <h1 class="font-bold">
+      <h1 class="font-bold text-primary">
         Nuxt UI
       </h1>
     </template>

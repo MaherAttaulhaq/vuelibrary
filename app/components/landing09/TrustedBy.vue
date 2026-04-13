@@ -18,7 +18,7 @@ const logos = [
     <div class="mx-auto max-w-container px-4 md:px-8">
 
       <!-- Heading -->
-      <p class="text-center text-md font-medium text-tertiary mb-10">
+      <p class="text-center text-md font-medium mb-10">
         Trusted by 4,000+ companies
       </p>
 

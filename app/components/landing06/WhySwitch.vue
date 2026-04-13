@@ -3,10 +3,10 @@
     <div class="mx-auto max-w-[1560px] px-4 md:px-8">
       <div class="flex flex-col gap-12 md:gap-16">
         <div class="flex flex-col gap-4 text-center">
-          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+          <h2 class="text-3xl font-bold tracking-tight text-primary md:text-4xl">
             Why switch to Untitled?
           </h2>
-          <p class="text-lg text-muted-foreground">
+          <p class="text-lg">
             We help you grow your business with our powerful tools and analytics.
           </p>
         </div>
@@ -20,8 +20,8 @@
               <component :is="item.icon" class="h-6 w-6 text-primary" />
             </div>
             <div class="flex flex-col gap-2">
-              <h3 class="text-xl font-semibold">{{ item.title }}</h3>
-              <p class="text-muted-foreground">{{ item.description }}</p>
+              <h3 class="text-xl font-semibold text-primary">{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
             </div>
           </div>
         </div>

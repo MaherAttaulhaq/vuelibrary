@@ -3,7 +3,7 @@
   <section class="bg-muted py-16 md:py-24">
     <UContainer>
       <div class="flex flex-col gap-8">
-        <p class="text-center text-md font-medium text-tertiary">Join 4,000+ companies already growing</p>
+        <p class="text-center text-md font-medium">Join 4,000+ companies already growing</p>
         <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-6">
           <!-- Light mode logos -->
           <img v-for="logo in lightLogos" :key="logo.alt" :alt="logo.alt" :src="logo.src" class="h-9 md:h-10 dark:hidden" />

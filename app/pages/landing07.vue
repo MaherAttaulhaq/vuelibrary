@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-muted">
     <Landing07Header />
     <Landing07Hero />
     <Landing07Features />
