@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useMobileMenu } from "../../pages/useMobileMenu";
+import { useMobileMenu } from "./useMobileMenu";
 
 const { isOpen, toggle, close } = useMobileMenu();
 

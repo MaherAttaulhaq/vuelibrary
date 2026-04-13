@@ -17,8 +17,18 @@
         <div
           class="mt-8 flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-start lg:mt-0"
         >
-          <UButton variant="outline" color="muted">Learn more</UButton>
-          <UButton variant="solid" color="primary">Get started</UButton>
+          <UButton
+            variant="outline"
+            color="muted"
+          >
+            Learn more
+          </UButton>
+          <UButton
+            variant="solid"
+            color="primary"
+          >
+            Get started
+          </UButton>
         </div>
       </div>
     </div>
