@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-muted/90">
+  <div class="bg-muted">
     <Landing08Header />
     <Landing08Hero />
     <Landing08SocialProof />
@@ -7,7 +7,7 @@
 
     <!-- Divider -->
     <div class="mx-auto max-w-container px-4 md:px-8">
-      <hr class="h-px w-full border-none bg-border-secondary">
+      <hr class="h-px w-full border-none bg-border">
     </div>
 
     <Landing08Testimonial />

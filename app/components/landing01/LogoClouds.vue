@@ -21,7 +21,7 @@ const integrationLogos = [
 </script>
 
 <template>
-  <section class="bg-gray-950 px-4 py-12 sm:px-6 lg:px-8">
+  <section class="bg-muted px-4 py-12 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-6xl space-y-10">
       <div>
         <UBadge color="neutral" variant="subtle" class="text-xs uppercase tracking-[0.4em] my-1.5">
@@ -56,7 +56,7 @@ const integrationLogos = [
           <div
             v-for="integration in integrationLogos"
             :key="integration"
-            class="flex h-12 items-center justify-center hover:bg-white/20 rounded-3xl  border border-white/5 bg-white/5 p-3"
+            class="flex h-12 items-center justify-center hover:bg-muted-foreground/20 rounded-3xl  border border-border bg-muted/50 p-3"
           >
             <img
               :src="`https://www.untitledui.com/logos/integrations/${integration}.svg`"

@@ -5,7 +5,7 @@
       <div class="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
         <UBadge color="secondary" variant="subtle">Pricing</UBadge>
         <h2 class="mt-3 text-3xl font-semibold text-primary md:text-4xl">Plans that fit your scale</h2>
-        <p class="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg md:mt-5 md:text-xl">
           Simple, transparent pricing that grows with you. Try any plan free for 30 days.
         </p>
       </div>

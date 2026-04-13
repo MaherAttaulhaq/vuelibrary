@@ -7,11 +7,11 @@
           <span class="hidden md:inline">Start your 30-day free trial</span>
           <span class="md:hidden">Start your free trial</span>
         </h2>
-        <p class="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg md:mt-5 md:text-xl">
           Join over 4,000+ startups already growing with Untitled.
         </p>
         <div class="mt-8 flex flex-col-reverse gap-3 self-stretch md:flex-row md:self-center">
-          <UButton color="secondary" size="xl">Learn more</UButton>
+          <UButton color="neutral" size="xl">Learn more</UButton>
           <UButton color="primary" size="xl">Get started</UButton>
         </div>
       </div>

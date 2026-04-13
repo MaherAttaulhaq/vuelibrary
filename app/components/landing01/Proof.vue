@@ -29,14 +29,14 @@ const testimonials = [
 <template>
   <section
     id="proof"
-    class="border-b border-white/5 px-4 py-12 sm:px-6 lg:px-8"
+    class="border-b border-border px-4 py-12 sm:px-6 lg:px-8"
   >
     <div class="mx-auto max-w-6xl space-y-10">
       <div>
         <UBadge color="neutral" variant="subtle" class="text-xs uppercase tracking-[0.4em]">
           Proof
         </UBadge>
-        <h2 class="text-3xl my-1.5 font-semibold text-white sm:text-4xl">
+        <h2 class="text-3xl my-1.5 font-semibold text-primary sm:text-4xl">
           Logo clouds, testimonials, and proof cards
         </h2>
       </div>
@@ -44,12 +44,12 @@ const testimonials = [
         <UCard
           v-for="section in proofSections"
           :key="section.title"
-          class="border-white/5 bg-white/5 transition hover:border-primary hover:bg-white/15"
+          class="border-border bg-muted/50 transition hover:border-primary hover:bg-muted"
         >
-          <h3 class="text-lg font-semibold text-white">
+          <h3 class="text-lg font-semibold text-primary">
             {{ section.title }}
           </h3>
-          <p class="mt-3 text-sm text-gray-300">
+          <p class="mt-3 text-sm">
             {{ section.description }}
           </p>
         </UCard>
@@ -58,13 +58,13 @@ const testimonials = [
         <UCard
           v-for="quote in testimonials"
           :key="quote.author"
-          class="border-white/5 bg-white/5 transition hover:border-primary hover:bg-white/15"
+          class="border-border bg-muted/50 transition hover:border-primary hover:bg-muted"
           :ui="{ body: 'p-6' }"
         >
-          <p class="text-base text-white">
+          <p class="text-base">
             "{{ quote.quote }}"
           </p>
-          <p class="text-xs uppercase tracking-[0.4em] text-gray-500">
+          <p class="text-xs uppercase tracking-[0.4em] text-muted-foreground">
             {{ quote.author }}
           </p>
         </UCard>

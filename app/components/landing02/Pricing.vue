@@ -39,8 +39,8 @@ const pricingPlans = [
         <UBadge color="primary" variant="subtle">
           Pricing
         </UBadge>
-        <h2 class="text-3xl md:text-4xl font-bold mt-2 text-highlighted">Plans that fit your scale</h2>
-        <p class="text-toned mt-4">Simple, transparent pricing. Try any plan free for 30 days.</p>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2 text-primary">Plans that fit your scale</h2>
+        <p class="mt-4">Simple, transparent pricing. Try any plan free for 30 days.</p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-12">

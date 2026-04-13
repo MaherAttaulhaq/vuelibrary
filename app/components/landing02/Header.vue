@@ -12,9 +12,9 @@ const navigationItems = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <UHeader class="sticky top-0 z-50 bg-default/80 backdrop-blur-md border-b border-default">
+  <UHeader class="sticky top-0 z-50 bg-muted/80 backdrop-blur-md border-b border-border">
     <template #title>
-      <a href="#" class="flex items-center gap-2 text-xl font-bold text-highlighted">
+      <a href="#" class="flex items-center gap-2 text-xl font-bold text-primary">
         <UIcon name="i-lucide-layers" class="w-8 h-8 text-primary" />
         <span>Untitled UI</span>
       </a>

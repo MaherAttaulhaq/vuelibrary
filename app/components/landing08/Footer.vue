@@ -1,11 +1,11 @@
 <template>
-  <footer class="bg-bg-primary py-12 md:pt-16">
+  <footer class="bg-muted py-12 md:pt-16">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex flex-col justify-center text-center">
-        <h2 class="text-display-xs font-semibold text-text-primary md:text-display-sm">
+        <h2 class="text-display-xs font-semibold text-primary md:text-display-sm">
           Start growing with Untitled
         </h2>
-        <p class="mt-2 text-md text-text-tertiary md:mt-4 md:text-xl">
+        <p class="mt-2 text-md md:mt-4 md:text-xl">
           Join over 4,000+ startups already growing with Untitled.
         </p>
         <div class="mt-8 flex flex-col-reverse gap-3 self-stretch md:mt-12 md:flex-row md:self-center">
@@ -29,7 +29,7 @@
             v-for="category in footerNavList"
             :key="category.label"
           >
-            <h4 class="text-sm font-semibold text-text-quaternary">
+            <h4 class="text-sm font-semibold text-muted-foreground">
               {{ category.label }}
             </h4>
             <ul class="mt-4 flex flex-col gap-3">
@@ -42,7 +42,7 @@
                   :to="item.href"
                   variant="link"
                   :label="item.label"
-                  class="text-text-tertiary hover:text-text-tertiary_hover"
+                  class="hover:text-primary"
                 />
               </li>
             </ul>
@@ -50,9 +50,9 @@
         </ul>
       </nav>
 
-      <div class="mt-12 flex flex-col justify-between gap-6 border-t border-border-secondary pt-8 md:mt-16 md:flex-row md:items-center">
+      <div class="mt-12 flex flex-col justify-between gap-6 border-t border-border pt-8 md:mt-16 md:flex-row md:items-center">
         <Logo />
-        <p class="text-sm text-text-quaternary">
+        <p class="text-sm text-muted-foreground">
           © 2077 Untitled UI. All rights reserved.
         </p>
       </div>
@@ -138,6 +138,6 @@ const Logo = () => h('div', { class: 'flex items-center gap-1' }, [
     h('rect', { width: '38', height: '38', rx: '8', fill: 'url(#logoGradient)' }),
     h('circle', { cx: '19', cy: '19', r: '8', fill: 'white' })
   ]),
-  h('span', { class: 'text-xl font-bold text-text-primary' }, 'Untitled UI')
+  h('span', { class: 'text-xl font-bold text-primary' }, 'Untitled UI')
 ])
 </script>

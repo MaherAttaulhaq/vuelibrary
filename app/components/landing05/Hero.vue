@@ -5,7 +5,7 @@
         <h1 class="text-4xl font-semibold text-primary md:text-5xl lg:text-6xl">
           Simple, transparent business credit cards
         </h1>
-        <p class="mt-4 text-lg text-secondary md:mt-6 md:text-xl">
+        <p class="mt-4 text-lg md:mt-6 md:text-xl">
           Mo money, no problems. Untitled is a next-generation financial technology company in the process of reinventing banking. 30-day free trial.
         </p>
         <div class="mt-8 flex w-full flex-col-reverse items-stretch gap-3 md:mt-12 md:flex-row md:items-start">
@@ -18,7 +18,7 @@
           />
           <UButton
             label="Sign up"
-            color="secondary"
+            color="primary"
             size="lg"
           />
         </div>

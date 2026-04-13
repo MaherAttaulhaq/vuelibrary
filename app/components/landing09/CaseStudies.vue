@@ -20,10 +20,10 @@ const cards = [
     <div class="mx-auto max-w-container px-4 md:px-8">
       <!-- Header -->
       <div class="flex flex-col gap-4 max-w-3xl">
-        <h2 class="text-display-sm md:text-display-md font-semibold text-highlighted">
+        <h2 class="text-display-sm md:text-display-md font-semibold text-primary">
           We've helped hundreds of global companies
         </h2>
-        <p class="text-lg md:text-xl text-muted-foreground">
+        <p class="text-lg md:text-xl">
           Case studies from some of our amazing customers who are building faster.
         </p>
       </div>
@@ -33,7 +33,7 @@ const cards = [
         <UCard
           v-for="(card, index) in cards"
           :key="index"
-          class="group relative h-[470px] w-[304px] md:w-[400px] shrink-0 snap-start overflow-hidden rounded-2xl border border-default transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+          class="group relative h-[470px] w-[304px] md:w-[400px] shrink-0 snap-start overflow-hidden rounded-2xl border border-border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
         >
           <!-- Gradient Background -->
           <div

@@ -1,32 +1,32 @@
 <template>
-  <section class="relative overflow-hidden bg-bg-primary py-16 md:py-24">
+  <section class="relative overflow-hidden bg-muted py-16 md:py-24">
     <!-- Background pattern -->
     <img
       alt="Grid of dots"
       aria-hidden="true"
       src="https://www.untitledui.com/patterns/light/grid-sm-desktop.svg"
-      class="pointer-events-none absolute top-0 left-1/2 z-0 hidden max-w-none -translate-x-1/2 dark:brightness-[0.2] md:block"
+      class="pointer-events-none absolute top-0 left-1/2 z-0 hidden max-w-none -translate-x-1/2 md:block"
     >
     <img
       alt="Grid of dots"
       aria-hidden="true"
       src="https://www.untitledui.com/patterns/light/grid-sm-mobile.svg"
-      class="pointer-events-none absolute top-0 left-1/2 z-0 max-w-none -translate-x-1/2 dark:brightness-[0.2] md:hidden"
+      class="pointer-events-none absolute top-0 left-1/2 z-0 max-w-none -translate-x-1/2 md:hidden"
     >
 
     <div class="mx-auto flex w-full max-w-container flex-col justify-between gap-8 px-4 md:px-8 lg:flex-row lg:items-end">
       <div class="flex max-w-3xl flex-1 flex-col items-start">
-        <h1 class="text-display-md font-semibold text-text-primary md:text-display-lg lg:text-display-xl">
+        <h1 class="text-display-md font-semibold text-primary md:text-display-lg lg:text-display-xl">
           Simple, transparent business credit cards
         </h1>
-        <p class="mt-4 text-lg text-balance text-text-tertiary md:mt-6 md:text-xl">
+        <p class="mt-4 text-lg text-balance md:mt-6 md:text-xl">
           Mo money, no problems. Untitled is a next-generation financial technology company in the process of reinventing banking. 30-day free trial.
         </p>
 
         <!-- Feature list for mobile -->
         <ul class="mt-8 flex shrink-0 flex-col gap-4 pl-2 lg:hidden">
           <li class="flex gap-3">
-            <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-bg-success-secondary text-icon-success">
+            <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               <svg
                 width="13"
                 height="11"
@@ -41,10 +41,10 @@
                 />
               </svg>
             </div>
-            <span class="text-lg text-text-tertiary">Instantly issue virtual corporate cards</span>
+            <span class="text-lg">Instantly issue virtual corporate cards</span>
           </li>
           <li class="flex gap-3">
-            <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-bg-success-secondary text-icon-success">
+            <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               <svg
                 width="13"
                 height="11"
@@ -59,10 +59,10 @@
                 />
               </svg>
             </div>
-            <span class="text-lg text-text-tertiary">Control spending before it happens</span>
+            <span class="text-lg">Control spending before it happens</span>
           </li>
           <li class="flex gap-3">
-            <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-bg-success-secondary text-icon-success">
+            <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
               <svg
                 width="13"
                 height="11"
@@ -77,7 +77,7 @@
                 />
               </svg>
             </div>
-            <span class="text-lg text-text-tertiary">Automate your expense management</span>
+            <span class="text-lg">Automate your expense management</span>
           </li>
         </ul>
 
@@ -99,6 +99,7 @@
           <UButton
             type="submit"
             size="xl"
+            color="primary"
             label="Get started"
           />
         </UForm>
@@ -107,7 +108,7 @@
       <!-- Feature list for desktop -->
       <ul class="hidden shrink-0 flex-col gap-5 pb-6 pl-4 lg:flex">
         <li class="flex gap-3">
-          <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-bg-success-secondary text-icon-success">
+          <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
             <svg
               width="13"
               height="11"
@@ -122,10 +123,10 @@
               />
             </svg>
           </div>
-          <span class="text-lg text-text-tertiary">Instantly issue virtual corporate cards</span>
+          <span class="text-lg">Instantly issue virtual corporate cards</span>
         </li>
         <li class="flex gap-3">
-          <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-bg-success-secondary text-icon-success">
+          <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
             <svg
               width="13"
               height="11"
@@ -140,10 +141,10 @@
               />
             </svg>
           </div>
-          <span class="text-lg text-text-tertiary">Control spending before it happens</span>
+          <span class="text-lg">Control spending before it happens</span>
         </li>
         <li class="flex gap-3">
-          <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-bg-success-secondary text-icon-success">
+          <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
             <svg
               width="13"
               height="11"
@@ -158,7 +159,7 @@
               />
             </svg>
           </div>
-          <span class="text-lg text-text-tertiary">Automate your expense management</span>
+          <span class="text-lg">Automate your expense management</span>
         </li>
       </ul>
     </div>

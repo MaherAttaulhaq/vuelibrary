@@ -1,7 +1,7 @@
 <template>
-  <UHeader class="border-b border-white/5 bg-muted backdrop-blur w-ful">
+  <UHeader class="bg-muted backdrop-blur">
     <template #title>
-      <h1>Nuxt Ui</h1>
+      <h1 class="text-primary">Nuxt Ui</h1>
     </template>
 
     <UNavigationMenu :items="items" />

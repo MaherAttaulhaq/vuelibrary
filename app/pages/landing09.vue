@@ -26,44 +26,13 @@ useSeoMeta({
 </script>
 
 <style>
-/* Add any custom styles here if needed */
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Container width */
 .max-w-container {
   max-width: 1560px;
-}
-
-.bg-primary {
-  background-color: #ffffff;
-}
-
-.bg-primary_alt {
-  background-color: #f9fafb;
-}
-
-.bg-secondary {
-  background-color: #f9fafb;
-}
-
-.bg-secondary_alt {
-  background-color: #f9fafb;
-}
-
-.text-primary {
-  color: #101828;
-}
-
-.text-secondary {
-  color: #475467;
-}
-
-.text-tertiary {
-  color: #667085;
-}
-
-.text-quaternary {
-  color: #98a2b3;
-}
-
-.brand-primary {
-  color: #6941c6;
 }
 </style>

@@ -8,7 +8,7 @@
         :ui="{
           container: 'flex flex-col items-center text-center',
           title: 'text-3xl md:text-4xl font-semibold text-primary',
-          description: 'mt-4 md:mt-5 text-lg md:text-xl text-secondary',
+          description: 'mt-4 md:mt-5 text-lg md:text-xl',
           actions: 'mt-8 flex flex-col-reverse gap-3 md:flex-row md:justify-center'
         }"
       >

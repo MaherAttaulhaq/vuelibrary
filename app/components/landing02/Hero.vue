@@ -2,11 +2,11 @@
   <section class="relative overflow-hidden pb-16 md:pt-8 md:pb-24">
     <UContainer class="container-custom">
       <UCard class="w-full bg-muted rounded-3xl px-6 py-16 md:py-24 text-center border-0">
-        <h1 class="max-w-3xl mx-auto text-4xl md:text-5xl lg:text-6xl font-bold text-highlighted">
+        <h1 class="max-w-3xl mx-auto text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
           Grow your users.
           <span class="text-primary">Smarter.</span>
         </h1>
-        <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-toned">
+        <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl">
           Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users. Trusted by over 4,000 startups.
         </p>
         <div class="mt-10 flex flex-col md:flex-row gap-4 w-full max-w-md mx-auto">
@@ -15,15 +15,15 @@
             Get started
           </UButton>
         </div>
-        <p class="text-xs text-muted mt-4">
+        <p class="text-xs text-muted-foreground mt-4">
           We care about your data in our <a href="#" class="underline text-primary">privacy policy</a>.
         </p>
       </UCard>
 
       <!-- Chart Mockup -->
       <div class="relative mx-auto -mt-10 md:-mt-24 max-w-5xl px-4">
-        <UCard class="rounded-2xl shadow-2xl ring-1 ring-default p-6 md:p-8">
-          <div class="text-sm font-semibold text-highlighted">Users over time</div>
+        <UCard class="rounded-2xl shadow-2xl ring-1 ring-border p-6 md:p-8">
+          <div class="text-sm font-semibold">Users over time</div>
           <div class="relative h-64 mt-4 flex items-end justify-between gap-2">
             <div class="w-full h-48 bg-gradient-to-t from-secondary/20 to-primary/10 rounded-t-2xl relative">
               <svg class="w-full h-full" viewBox="0 0 736 160" preserveAspectRatio="none">
@@ -32,7 +32,7 @@
               </svg>
             </div>
           </div>
-          <div class="flex justify-between text-xs text-muted mt-4 px-2">
+          <div class="flex justify-between text-xs text-muted-foreground mt-4 px-2">
             <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
             <span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
           </div>
@@ -40,10 +40,10 @@
 
         <!-- Floating circular mini chart -->
         <div class="absolute -right-8 -bottom-8 md:right-[-40px] md:bottom-0">
-          <UCard class="rounded-full shadow-lg p-4 w-36 h-36 flex items-center justify-center ring-1 ring-default">
+          <UCard class="rounded-full shadow-lg p-4 w-36 h-36 flex items-center justify-center ring-1 ring-border">
             <div class="text-center">
-              <p class="text-xs text-muted">Active users</p>
-              <p class="text-2xl font-bold">1,000</p>
+              <p class="text-xs text-muted-foreground">Active users</p>
+              <p class="text-2xl font-bold text-primary">1,000</p>
             </div>
           </UCard>
         </div>

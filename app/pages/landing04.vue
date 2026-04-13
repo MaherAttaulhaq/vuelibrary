@@ -143,36 +143,40 @@
 
       <!-- Hero Content -->
       <section class="relative overflow-hidden pt-16 md:pt-24 md:pb-0">
+        <!-- Background -->
         <img
-          alt="Light Accent"
-          aria-hidden="true"
           src="https://www.untitledui.com/marketing/light-accent.webp"
           class="absolute -right-2/3 -bottom-12 max-w-160 opacity-90 mix-blend-screen sm:-right-1/3 md:max-w-7xl"
         >
 
+        <!-- Content -->
         <div class="mx-auto w-full max-w-container px-4 md:px-8">
           <div class="mx-auto flex max-w-3xl flex-col md:items-center md:text-center">
-            <span class="text-sm font-semibold text-secondary md:text-md">Super. Simple. Banking.</span>
-            <h1 class="mt-3 text-display-md font-semibold text-primary md:text-display-lg lg:text-display-2xl">
+            <span class="text-sm font-semibold text-secondary_on-brand">
+              Super. Simple. Banking.
+            </span>
+
+            <h1 class="mt-3 text-display-md font-semibold text-primary_on-brand md:text-display-lg lg:text-display-2xl">
               Banking technology that has your back.
             </h1>
-            <p class="mt-4 max-w-3xl text-lg text-balance text-tertiary md:mt-6 md:text-xl">
+
+            <p class="mt-4 text-lg text-tertiary_on-brand md:text-xl">
               Simple, transparent banking. No hidden fees and free overdrafts.
             </p>
-            <div class="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-12">
-              <UButton class="bg-muted text-secondary shadow-xs ring-0">
+
+            <!-- Buttons -->
+            <div class="mt-8 flex flex-col-reverse gap-3 sm:flex-row md:mt-12">
+              <UButton
+                variant="soft"
+                class="bg-primary text-secondary"
+              >
                 <template #leading>
-                  <UIcon
-                    name="i-heroicons-play-circle-20-solid"
-                    class="size-5"
-                  />
+                  <UIcon name="i-heroicons-play-circle-20-solid" />
                 </template>
                 Demo
               </UButton>
-              <UButton
-                color="primary"
-                class="bg-primary text-white"
-              >
+
+              <UButton class="bg-brand-solid text-white">
                 Sign up
               </UButton>
             </div>
@@ -182,14 +186,45 @@
         <!-- Floating Cards -->
         <div class="mx-auto mt-16 w-full max-w-container md:px-8">
           <div class="flex h-46 items-end justify-center md:h-114">
-            <div class="flex -translate-y-[53px] items-start justify-end md:translate-y-2">
-              <FloatingCard
-                v-for="(card, index) in floatingCards"
-                :key="index"
-                :style="card.style"
-                :name="card.name"
-                :date="card.date"
-              />
+            <div class="flex -translate-y-[53px] md:translate-y-2 relative">
+              <div
+                v-for="(card, i) in cards"
+                :key="i"
+                class="absolute origin-right"
+                :style="{
+                  transform: `scale(0.7) translate(${card.x}px, ${card.y}px) rotate(${card.rotate}deg)`
+                }"
+              >
+                <UCard
+                  class="w-[316px] h-[190px] backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl overflow-hidden"
+                >
+                  <!-- Glow -->
+                  <div class="absolute -top-4 -left-4 grid grid-cols-2 blur-3xl">
+                    <div class="size-20 bg-pink-500 opacity-30 rounded-tl-full" />
+                    <div class="size-20 bg-orange-500 opacity-50 rounded-tr-full" />
+                    <div class="size-20 bg-blue-500 opacity-30 rounded-bl-full" />
+                    <div class="size-20 bg-green-500 opacity-30 rounded-br-full" />
+                  </div>
+
+                  <!-- Top -->
+                  <div class="flex justify-between text-white text-sm font-semibold">
+                    <span>Untitled.</span>
+                    <UIcon name="i-heroicons-signal" />
+                  </div>
+
+                  <!-- Bottom -->
+                  <div class="mt-auto text-white">
+                    <div class="flex justify-between text-xs uppercase">
+                      <span>{{ card.name }}</span>
+                      <span>06/28</span>
+                    </div>
+
+                    <div class="mt-2 text-md tracking-widest">
+                      1234 1234 1234 1234
+                    </div>
+                  </div>
+                </UCard>
+              </div>
             </div>
           </div>
         </div>
@@ -732,7 +767,6 @@ const subscribeNewsletter = () => {
 
 const route = useRoute()
 
-
 // Dropdown groups
 const items = computed(() => [
   {
@@ -767,6 +801,14 @@ const items = computed(() => [
     active: route.path.startsWith('/about')
   }
 ])
+
+const cards = [
+  { name: 'Phoenix Baker', rotate: 30, x: -59, y: 39 },
+  { name: 'Olivia Rhye', rotate: 60, x: -38, y: 10 },
+  { name: 'Lana Steiner', rotate: 90, x: 0, y: 0 },
+  { name: 'Demi Wilkinson', rotate: 120, x: 36, y: 10 },
+  { name: 'Candice Wu', rotate: 150, x: 59, y: 39 }
+]
 </script>
 
 <style>
@@ -806,6 +848,14 @@ const items = computed(() => [
 
 .border-muted-alt {
   border-color: #e5e7eb;
+}
+
+.border-border {
+  border-color: #d1d5db;
+}
+
+.text-muted-foreground {
+  color: #6b7280;
 }
 
 /* Primary color palette */

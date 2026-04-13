@@ -1,12 +1,12 @@
 <template>
-  <section class="bg-bg-primary py-16 md:py-24">
+  <section class="bg-muted py-16 md:py-24">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex flex-col items-center gap-12 text-center">
         <div class="flex max-w-2xl flex-col">
-          <h2 class="text-display-md font-semibold text-text-primary md:text-display-lg">
+          <h2 class="text-display-md font-semibold text-primary md:text-display-lg">
             Simple, transparent pricing
           </h2>
-          <p class="mt-4 text-xl text-text-tertiary">
+          <p class="mt-4 text-xl">
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
           </p>
         </div>

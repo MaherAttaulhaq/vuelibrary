@@ -64,7 +64,7 @@
 
       <template #right>
         <UButton
-          color="secondary"
+          color="neutral"
           variant="ghost"
           size="sm"
         >
@@ -120,14 +120,14 @@
           <h1 class="mt-4 text-4xl font-semibold tracking-tight text-primary md:text-5xl lg:text-6xl">
             No more banking headaches
           </h1>
-          <p class="mt-4 max-w-3xl text-lg text-tertiary md:mt-6 md:text-xl">
+          <p class="mt-4 max-w-3xl text-lg md:mt-6 md:text-xl">
             Mo money, no problems. Untitled is a next-generation financial technology company in the process of reinventing banking. 30-day free trial.
           </p>
 
           <!-- Buttons -->
           <div class="mt-8 flex w-full flex-col-reverse items-stretch gap-3 sm:w-auto sm:flex-row sm:items-start md:mt-12">
             <UButton
-              color="secondary"
+              color="neutral"
               size="xl"
             >
               Watch demo

@@ -1,13 +1,13 @@
 <template>
-  <section class="bg-bg-primary pb-16 md:pb-0">
-    <div class="bg-bg-secondary pt-16 pb-28 md:pt-24 md:pb-40">
+  <section class="bg-muted pb-16 md:pb-0">
+    <div class="bg-muted-section pt-16 pb-28 md:pt-24 md:pb-40">
       <div class="mx-auto w-full max-w-container px-4 md:px-8">
         <div class="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-          <span class="text-sm font-semibold text-text-brand-secondary md:text-md">Features</span>
-          <h2 class="mt-3 text-display-sm font-semibold text-text-primary md:text-display-md">
+          <span class="text-sm font-semibold text-primary md:text-md">Features</span>
+          <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">
             All-in-one finance for any business
           </h2>
-          <p class="mt-4 text-lg text-text-tertiary md:mt-5 md:text-xl">
+          <p class="mt-4 text-lg md:mt-5 md:text-xl">
             Get a deposit account, credit card, and spend management software—in one refreshingly easy solution. No fees or minimums.
           </p>
         </div>

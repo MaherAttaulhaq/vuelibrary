@@ -15,16 +15,16 @@ const integrations = [
       <UBadge color="secondary" variant="subtle">
         Integrations
       </UBadge>
-      <h2 class="mt-4 text-3xl md:text-4xl font-bold text-highlighted">Get more value from your tools</h2>
-      <p class="mt-4 text-lg text-toned max-w-2xl mx-auto">
+      <h2 class="mt-4 text-3xl md:text-4xl font-bold text-primary">Get more value from your tools</h2>
+      <p class="mt-4 text-lg max-w-2xl mx-auto">
         Connect your tools, connect your teams. With over 100 apps already available in our directory.
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        <UCard v-for="integration in integrations" :key="integration.name" class="text-center feature-card">
+        <UCard v-for="integration in integrations" :key="integration.name" class="text-center feature-card border-border bg-muted/50 hover:bg-muted">
           <img :src="integration.icon" class="h-14 mx-auto mb-4" :alt="integration.name">
-          <h3 class="text-lg font-semibold">{{ integration.name }} integration</h3>
-          <p class="text-muted mt-2">{{ integration.description }}</p>
+          <h3 class="text-lg font-semibold text-primary">{{ integration.name }} integration</h3>
+          <p class="text-muted-foreground mt-2">{{ integration.description }}</p>
           <UButton color="primary" variant="link" class="mt-4">
             View integration →
           </UButton>

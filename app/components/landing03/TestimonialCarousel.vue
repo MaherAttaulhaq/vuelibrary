@@ -29,13 +29,13 @@ const paginatedTestimonials = computed(() => {
           <h2 class="text-3xl font-semibold text-primary md:text-4xl">
             Don't just take our word for it
           </h2>
-          <p class="text-lg text-tertiary md:text-xl">
+          <p class="text-lg md:text-xl">
             Hear from some of our amazing customers who are automating their finances.
           </p>
         </div>
 
         <div class="flex flex-col-reverse gap-3 self-stretch sm:flex-row sm:self-start">
-          <UButton color="secondary" size="xl">Our customers</UButton>
+          <UButton color="neutral" size="xl">Our customers</UButton>
           <UButton color="primary" size="xl">Create account</UButton>
         </div>
       </div>

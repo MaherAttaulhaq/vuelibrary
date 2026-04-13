@@ -134,7 +134,7 @@
       <section class="bg-muted-section pb-16 md:pb-24">
         <div class="mx-auto max-w-[1560px] md:px-8">
           <div class="flex flex-col gap-8 bg-muted-section px-6 py-12 md:rounded-2xl md:p-16">
-            <p class="text-center text-md font-medium text-secondary md:text-xl">
+            <p class="text-center text-md font-medium md:text-xl">
               Trusted by 4,000+ companies
             </p>
             <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-8">
@@ -186,7 +186,7 @@
             <h2 class="mt-3 text-3xl font-semibold text-primary md:text-4xl">
               The only card you'll ever need. Simple.
             </h2>
-            <p class="mt-4 text-lg text-secondary md:mt-5 md:text-xl">
+            <p class="mt-4 text-lg md:mt-5 md:text-xl">
               Spend smarter, lower your bills, get cashback on everything you buy, and unlock credit to grow your business.
             </p>
           </div>
@@ -198,7 +198,7 @@
                   <h3 class="text-lg font-semibold text-primary">
                     Share team inboxes
                   </h3>
-                  <p class="mt-1 text-md text-secondary">
+                  <p class="mt-1 text-md">
                     Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.
                   </p>
                 </div>
@@ -215,7 +215,7 @@
                   <h3 class="text-lg font-semibold text-primary">
                     Deliver instant answers
                   </h3>
-                  <p class="mt-1 text-md text-secondary">
+                  <p class="mt-1 text-md">
                     An all-in-one customer service platform that helps you balance everything your customers need to be happy.
                   </p>
                 </div>
@@ -232,7 +232,7 @@
                   <h3 class="text-lg font-semibold text-primary">
                     Manage your team with reports
                   </h3>
-                  <p class="mt-1 text-md text-secondary">
+                  <p class="mt-1 text-md">
                     Measure what matters with Untitled's easy-to-use reports. You can filter, export, and drilldown on the data in a couple clicks.
                   </p>
                 </div>
@@ -287,7 +287,7 @@
             <h2 class="mt-3 text-3xl font-semibold text-primary md:text-4xl">
               All-in-one finance for any business
             </h2>
-            <p class="mt-4 text-lg text-secondary md:mt-5 md:text-xl">
+            <p class="mt-4 text-lg md:mt-5 md:text-xl">
               Get a deposit account, credit card, and spend management software—in one refreshingly easy solution. No fees or minimums.
             </p>
           </div>
@@ -322,7 +322,7 @@
             :ui="{
               container: 'flex flex-col items-center text-center',
               title: 'text-3xl md:text-4xl font-semibold text-primary',
-              description: 'mt-4 md:mt-5 text-lg md:text-xl text-secondary',
+              description: 'mt-4 md:mt-5 text-lg md:text-xl',
               actions: 'mt-8 flex flex-col-reverse gap-3 md:flex-row md:justify-center'
             }"
           >
@@ -357,7 +357,7 @@
             <h2 class="mt-3 text-3xl font-semibold text-primary md:text-4xl">
               Pricing as simple as our cards
             </h2>
-            <p class="mt-4 text-lg text-secondary md:mt-5">
+            <p class="mt-4 text-lg md:mt-5">
               Simple, transparent pricing that grows with you. Try any plan free for 30 days.
             </p>
           </div>
@@ -371,10 +371,10 @@
                 :key="feature.title"
                 class="flex gap-4"
               >
-                <div class="relative hidden shrink-0 items-center justify-center bg-muted-light shadow-xs ring-1 ring-muted-dark md:inline-flex size-12 rounded-[10px] text-secondary">
+                <div class="relative hidden shrink-0 items-center justify-center bg-muted-light shadow-xs ring-1 ring-muted-dark md:inline-flex size-12 rounded-[10px]">
                   <UIcon
                     :name="feature.icon"
-                    class="size-6"
+                    class="size-6 text-primary"
                   />
                 </div>
 
@@ -382,7 +382,7 @@
                   <h3 class="text-lg font-semibold text-primary md:text-xl">
                     {{ feature.title }}
                   </h3>
-                  <p class="mt-1 text-md text-secondary md:mt-2">
+                  <p class="mt-1 text-md md:mt-2">
                     {{ feature.description }}
                   </p>
                 </div>
@@ -468,7 +468,7 @@
                   />
                 </svg>
               </div>
-              <p class="text-md text-secondary">
+              <p class="text-md">
                 Design amazing digital experiences that create more happy in the world.
               </p>
               <div class="flex items-center gap-2">
@@ -484,7 +484,7 @@
                   <p class="text-sm font-semibold text-primary">
                     Best Design Tool
                   </p>
-                  <p class="text-xs font-medium text-secondary">
+                  <p class="text-xs font-medium">
                     2,000+ reviews
                   </p>
                 </div>
@@ -497,7 +497,7 @@
                   v-for="section in footerSections"
                   :key="section.title"
                 >
-                  <h4 class="text-sm font-semibold text-tertiary">
+                  <h4 class="text-sm font-semibold text-muted-foreground">
                     {{ section.title }}
                   </h4>
                   <ul class="mt-4 flex flex-col gap-3">
@@ -507,7 +507,7 @@
                     >
                       <ULink
                         :to="link.href"
-                        class="text-sm text-secondary hover:text-primary"
+                        class="text-sm hover:text-primary"
                       >{{ link.label }}</ULink>
                     </li>
                   </ul>
@@ -519,7 +519,7 @@
           <UDivider class="my-8" />
 
           <div class="flex flex-col-reverse justify-between gap-6">
-            <p class="text-sm text-tertiary">
+            <p class="text-sm text-muted-foreground">
               © 2077 Untitled UI. All rights reserved.
             </p>
             <div class="flex gap-6">
@@ -527,7 +527,7 @@
                 v-for="social in socialLinks"
                 :key="social.name"
                 :to="social.href"
-                class="text-tertiary hover:text-secondary"
+                class="text-muted-foreground hover:text-primary"
               >
                 <UIcon
                   :name="social.icon"

@@ -1,12 +1,12 @@
 <template>
-  <section class="bg-bg-secondary py-16 md:py-24">
+  <section class="bg-muted py-16 md:py-24">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex flex-col gap-x-16 gap-y-12 lg:flex-row lg:items-center">
         <div class="flex max-w-2xl flex-1 flex-col">
-          <h2 class="text-display-md font-semibold text-text-primary md:text-display-lg">
+          <h2 class="text-display-md font-semibold text-primary md:text-display-lg">
             Everything you need to accept card payments
           </h2>
-          <p class="mt-4 text-xl text-text-tertiary">
+          <p class="mt-4 text-xl">
             Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus quisquam.
           </p>
           <ul class="mt-8 flex flex-col gap-6">

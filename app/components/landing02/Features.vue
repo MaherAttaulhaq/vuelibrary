@@ -13,8 +13,8 @@ const features = [
         <UBadge color="secondary" variant="subtle">
           Features
         </UBadge>
-        <h2 class="text-3xl md:text-4xl font-bold mt-4 text-highlighted">Cutting-edge features for advanced analytics</h2>
-        <p class="text-toned mt-4">
+        <h2 class="text-3xl md:text-4xl font-bold mt-4 text-primary">Cutting-edge features for advanced analytics</h2>
+        <p class="mt-4">
           Powerful, self-serve product and growth analytics to help you convert, engage, and retain more users.
         </p>
       </div>
@@ -26,8 +26,8 @@ const features = [
         <div class="flex-1 grid grid-cols-1 gap-8">
           <div v-for="feature in features" :key="feature.title" class="flex flex-col items-start gap-3">
             <UIcon :name="feature.icon" class="text-3xl text-primary" />
-            <h3 class="text-xl font-semibold text-highlighted">{{ feature.title }}</h3>
-            <p class="text-toned">{{ feature.description }}</p>
+            <h3 class="text-xl font-semibold text-primary">{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
             <UButton color="primary" variant="link">Learn more →</UButton>
           </div>
         </div>

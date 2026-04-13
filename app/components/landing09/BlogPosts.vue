@@ -4,7 +4,7 @@
       <!-- Header (unchanged structure) -->
       <div class="flex flex-col items-start justify-between lg:flex-row">
         <div class="max-w-3xl">
-          <p class="text-sm font-semibold text-brand-secondary md:text-md">
+          <p class="text-sm font-semibold md:text-md">
             Our blog
           </p>
 
@@ -12,7 +12,7 @@
             Latest blog posts
           </h2>
 
-          <p class="mt-4 text-lg text-tertiary md:mt-5 md:text-xl">
+          <p class="mt-4 text-lg md:mt-5 md:text-xl">
             Tool and strategies modern teams need to help their companies grow.
           </p>
         </div>
@@ -41,7 +41,7 @@
             <!-- Content -->
             <div class="flex flex-col gap-5 p-5">
               <div class="flex flex-col gap-2">
-                <span class="text-sm font-semibold text-brand-secondary">
+                <span class="text-sm font-semibold">
                   {{ post.category }}
                 </span>
 
@@ -50,7 +50,7 @@
                     {{ post.title }}
                   </h3>
 
-                  <p class="line-clamp-2 text-md text-tertiary">
+                  <p class="line-clamp-2 text-md">
                     {{ post.description }}
                   </p>
                 </div>
@@ -68,7 +68,7 @@
                   <p class="text-sm font-semibold text-primary">
                     {{ post.author }}
                   </p>
-                  <time class="block text-sm text-tertiary">
+                  <time class="block text-sm">
                     {{ post.date }}
                   </time>
                 </div>

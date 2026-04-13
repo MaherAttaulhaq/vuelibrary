@@ -1,12 +1,12 @@
 <template>
-  <section class="overflow-hidden bg-bg-primary pb-16 lg:pb-24">
+  <section class="overflow-hidden bg-muted pb-16 lg:pb-24">
     <div class="mx-auto w-full max-w-container px-4 md:px-8">
       <div class="flex w-full flex-col lg:max-w-3xl">
-        <span class="text-sm font-semibold text-text-brand-secondary md:text-md">Features</span>
-        <h2 class="mt-3 text-display-sm font-semibold text-text-primary md:text-display-md">
+        <span class="text-sm font-semibold text-primary md:text-md">Features</span>
+        <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">
           The only card you'll ever need. Simple.
         </h2>
-        <p class="mt-4 text-lg text-text-tertiary md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg md:mt-5 md:text-xl">
           Spend smarter, lower your bills, get cashback on everything you buy, and unlock credit to grow your business.
         </p>
       </div>
@@ -20,15 +20,15 @@
           >
             <div
               :class="[
-                'relative flex cursor-pointer flex-col items-start gap-4 border-l-4 py-4 pl-5 transition duration-100 ease-linear hover:border-border-brand',
-                activeFeatureTab === index ? 'border-border-brand' : 'border-border-tertiary'
+                'relative flex cursor-pointer flex-col items-start gap-4 border-l-4 py-4 pl-5 transition duration-100 ease-linear hover:border-primary',
+                activeFeatureTab === index ? 'border-primary' : 'border-border'
               ]"
             >
               <div>
-                <h3 class="text-lg font-semibold text-text-primary">
+                <h3 class="text-lg font-semibold text-primary">
                   {{ item.title }}
                 </h3>
-                <p class="mt-1 text-md text-text-tertiary">
+                <p class="mt-1 text-md">
                   {{ item.subtitle }}
                 </p>
               </div>
@@ -43,7 +43,7 @@
         </ul>
 
         <!-- 3D Card Stack -->
-        <div class="relative -mx-4 flex h-80 items-center justify-center bg-bg-tertiary md:mr-0 md:h-120 md:rounded-2xl lg:h-140">
+        <div class="relative -mx-4 flex h-80 items-center justify-center bg-muted md:mr-0 md:h-120 md:rounded-2xl lg:h-140">
           <div class="-space-y-[146px] md:-translate-x-2 md:translate-y-3.5 md:-space-y-[126px]">
             <div
               class="relative z-4 [--scale:1.13] md:[--scale:1.641]"

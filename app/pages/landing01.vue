@@ -31,7 +31,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <UContainer class="min-h-screen bg-gray-950 text-gray-100">
+  <UContainer class="min-h-screen bg-muted">
     <Landing01Header />
 
     <main class="space-y-12 pt-8">
@@ -50,6 +50,9 @@ const items = computed<NavigationMenuItem[]>(() => [
 
       <!-- FAQ Section -->
       <Landing01FAQ />
+
+      <!-- Footer -->
+      <Landing01Footer />
     </main>
   </UContainer>
 </template>
