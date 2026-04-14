@@ -1,5 +1,5 @@
 <template>
-  <div class="relative overflow-hidden bg-muted-100 dark:bg-muted-900">
+  <div class="relative overflow-hidden">
     <img
       alt="Grid background pattern"
       aria-hidden="true"
