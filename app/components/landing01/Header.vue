@@ -24,7 +24,7 @@ const items = computed<NavigationMenuItem[]>(() => [
 
 <template>
   <UHeader
-    class="sticky top-0 z-50 border-b border-border bg-muted/90 backdrop-blur"
+    class="sticky top-0 z-50  bg-muted/90 backdrop-blur"
   >
     <!-- LEFT (LOGO / TITLE) -->
     <template #title>

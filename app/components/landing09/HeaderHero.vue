@@ -35,7 +35,7 @@
     </UHeader>
 
     <!-- Hero -->
-    <section class="relative py-16 md:pb-24">
+    <section class="relative">
       <div class="mx-auto grid max-w-container grid-cols-1 items-center gap-16 px-4 md:px-8 lg:grid-cols-2">
         <!-- Left Content -->
         <div class="flex max-w-3xl flex-col items-start">
