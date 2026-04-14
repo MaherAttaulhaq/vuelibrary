@@ -13,7 +13,7 @@ import AppFooter from '~/components/landingpage19/AppFooter.vue'
 </script>
 
 <template>
-  <div class="bg-muted">
+  <div class="container mx-auto">
     <AppHeader />
     <main>
       <HeroSection />
