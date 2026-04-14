@@ -25,13 +25,13 @@ const capabilityItems = [
   <section class="overflow-hidden bg-muted py-16 md:py-24">
     <div class="mx-auto w-full max-w-container px-4 md:px-8">
       <div class="flex w-full flex-col lg:max-w-3xl">
-        <span class="text-sm font-semibold text-brand-600 md:text-md">Hire faster</span>
+        <span class="text-sm font-semibold text-primary md:text-md">Hire faster</span>
         <h2
           class="mt-3 text-display-sm font-semibold text-primary md:text-display-md"
         >
           A seamless experience for candidates
         </h2>
-        <p class="mt-4 text-lg text-muted-600 md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg text-default md:mt-5 md:text-xl">
           Treat candidates with a rich careers site and a wonderful application
           process.
         </p>
@@ -53,7 +53,7 @@ const capabilityItems = [
                 <h3 class="text-lg font-semibold text-primary">
                   {{ item.title }}
                 </h3>
-                <p class="mt-1 text-md text-muted-600">
+                <p class="mt-1 text-md text-default">
                   {{ item.description }}
                 </p>
               </div>

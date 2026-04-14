@@ -21,7 +21,7 @@
             <p class="text-lg font-semibold text-primary">
               Candice Wu
             </p>
-            <cite class="text-md not-italic text-muted-500 dark:text-muted-400">
+            <cite class="text-md not-italic text-default">
               Head of Design, Layers
             </cite>
           </figcaption>

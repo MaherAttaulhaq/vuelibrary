@@ -8,7 +8,7 @@
           <span class="hidden md:inline">Start your 30-day free trial</span>
           <span class="md:hidden">Start your free trial</span>
         </h2>
-        <p class="mt-4 text-lg text-muted-600 md:mt-5 md:text-xl">
+        <p class="mt-4 text-lg text-default md:mt-5 md:text-xl">
           Join over 4,000+ startups already growing with Untitled.
         </p>
         <div

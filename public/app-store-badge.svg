@@ -1,0 +1,14 @@
+<svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="120" height="40" rx="4" fill="#000"/>
+  
+  <!-- App Store Icon -->
+  <g transform="translate(8, 8)">
+    <rect width="24" height="24" rx="5" fill="#555"/>
+    <path d="M12 6L18 18H6Z" fill="#fff" opacity="0.9"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="38" y="15" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="600" fill="#fff">Download on the</text>
+  <text x="38" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="600" fill="#fff">App Store</text>
+</svg>

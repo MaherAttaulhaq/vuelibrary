@@ -22,7 +22,7 @@ const features = [
           <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">
             Commercial interior designers
           </h2>
-          <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">
+          <p class="mt-4 text-lg text-default md:mt-5 md:text-xl">
             Untitled are a commercial interior design studio. We specialize in customised office design, restaurant design, shop design, and studio design.
           </p>
         </div>
@@ -41,7 +41,7 @@ const features = [
                   <h3 class="mt-1.5 text-lg font-semibold text-primary md:mt-2.5">
                     {{ feature.title }}
                   </h3>
-                  <p class="mt-1 text-md text-muted-600 dark:text-muted-400">
+                  <p class="mt-1 text-md text-default">
                     {{ feature.description }}
                   </p>
                 </div>

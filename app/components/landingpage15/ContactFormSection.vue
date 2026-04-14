@@ -33,7 +33,7 @@ async function onSubmitContact() {
             <h2 class="text-display-sm font-semibold text-primary md:text-display-md">
               Let&apos;s start your project
             </h2>
-            <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">
+            <p class="mt-4 text-lg text-default md:mt-5 md:text-xl">
               Our friendly team would love to hear from you.
             </p>
 

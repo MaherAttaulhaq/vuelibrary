@@ -43,7 +43,7 @@ async function onSubmitNewsletter() {
           <nav>
             <ul class="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-[repeat(6,max-content)]">
               <li v-for="link in footerLinks" :key="link">
-                <ULink to="#" class="text-sm font-semibold text-muted-500 hover:text-muted-700 dark:text-muted-400 dark:hover:text-muted-200">
+                <ULink to="#" class="text-sm font-semibold text-default hover:text-muted-700 dark:text-muted-200">
                   {{ link }}
                 </ULink>
               </li>
@@ -73,12 +73,12 @@ async function onSubmitNewsletter() {
       </div>
 
       <div class="mt-12 flex flex-col-reverse justify-between gap-4 border-t border-muted-200 pt-8 dark:border-muted-800 md:mt-16 md:flex-row md:gap-6">
-        <p class="text-sm text-muted-400 dark:text-muted-500">
+        <p class="text-sm text-default">
           © 2077 Untitled UI. All rights reserved.
         </p>
         <ul class="flex gap-3">
           <li v-for="link in legalLinks" :key="link">
-            <ULink to="#" class="rounded-xs text-sm text-muted-400 hover:text-muted-600 dark:text-muted-500 dark:hover:text-muted-300">
+            <ULink to="#" class="rounded-xs text-sm text-default hover:text-muted-600 dark:text-muted-300">
               {{ link }}
             </ULink>
           </li>

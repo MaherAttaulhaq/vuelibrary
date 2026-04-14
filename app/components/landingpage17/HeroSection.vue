@@ -51,13 +51,13 @@ function playVideo() {
           </ULink>
 
           <h1
-            class="mt-4 text-display-md font-semibold text-brand-700 md:text-display-lg lg:text-display-xl"
+            class="mt-4 text-display-md font-semibold text-primary md:text-display-lg lg:text-display-xl"
           >
             High-performing remote teams. <br />
             The future of work.
           </h1>
 
-          <p class="mt-4 max-w-3xl text-lg text-brand-600 md:mt-6 md:text-xl">
+          <p class="mt-4 max-w-3xl text-lg text-default md:mt-6 md:text-xl">
             Powerful, self-serve team engagement tools and analytics.
             Supercharge your managers & keep employees engaged from anywhere.
           </p>

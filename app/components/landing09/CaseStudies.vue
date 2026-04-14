@@ -29,11 +29,17 @@ const cards = [
       </div>
 
       <!-- Cards -->
-      <div class="mt-12 md:mt-16 flex gap-6 md:gap-8 overflow-x-auto pb-4 snap-x snap-mandatory">
+      <div
+        class="mt-12 md:mt-16 flex flex-col md:flex-row gap-6 md:gap-8
+           md:overflow-x-auto md:pb-4 md:snap-x md:snap-mandatory"
+      >
         <UCard
           v-for="(card, index) in cards"
           :key="index"
-          class="group relative h-[470px] w-[304px] md:w-[400px] shrink-0 snap-start overflow-hidden rounded-2xl border border-border transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+          class="group relative h-[470px] w-full md:w-[400px]
+             md:shrink-0 md:snap-start
+             overflow-hidden rounded-2xl border border-border
+             transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
         >
           <!-- Gradient Background -->
           <div
@@ -41,7 +47,7 @@ const cards = [
             :class="card.gradient"
           />
 
-          <!-- Dark Overlay for readability -->
+          <!-- Dark Overlay -->
           <div class="absolute inset-0 bg-black/20" />
 
           <!-- Logo -->

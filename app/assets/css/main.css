@@ -15,4 +15,9 @@
   --color-green-800: #016538;
   --color-green-900: #0A5331;
   --color-green-950: #052E16;
+
+  /* Text colors */
+  --color-text-default: #111827; /* gray-900 */
+  --color-bg-muted: #F9FAFB; /* gray-50 */
+  --color-text-primary: #00C16A; /* green-500 */
 }

@@ -22,6 +22,6 @@ import AppFooter from '~/components/landingpage12/AppFooter.vue'
       <NewsletterSection />
     </main>
 
-    <AppFooter />
+    <!-- <AppFooter /> -->
   </div>
 </template>

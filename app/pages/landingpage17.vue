@@ -15,7 +15,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="bg-muted">
+  <div class="bg-muted text-default">
     <div class="bg-muted">
       <AppHeader />
       <HeroSection />

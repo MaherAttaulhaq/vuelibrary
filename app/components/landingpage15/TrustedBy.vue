@@ -13,7 +13,7 @@ const companies = [
   <section class="bg-brand-700 pb-16 md:pb-24 dark:bg-brand-900">
     <div class="mx-auto max-w-container px-4 md:px-8">
       <div class="flex flex-col gap-8">
-        <p class="text-center text-md font-medium text-white/70">
+        <p class="text-center text-md font-medium text-default">
           We&apos;ve worked with some great startups
         </p>
         <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 xl:gap-x-6">

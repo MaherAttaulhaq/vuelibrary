@@ -33,30 +33,65 @@ const contactItems = [
 
 <template>
   <div class="mx-auto max-w-container px-4 md:px-8">
-    <hr class="h-px w-full border-none bg-muted-200 dark:bg-muted-800">
+    <UDivider />
   </div>
 
   <section class="bg-muted py-16 md:py-24">
     <div class="mx-auto max-w-container px-4 md:px-8">
-      <div class="flex w-full max-w-3xl flex-col">
-        <span class="text-sm font-semibold text-primary md:text-md">Contact us</span>
-        <h2 class="mt-3 text-display-sm font-semibold text-primary md:text-display-md">We&apos;d love to hear from you</h2>
-        <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:mt-5 md:text-xl">Our friendly team is always here to chat.</p>
+      <!-- Heading -->
+      <div class="max-w-3xl">
+        <UBadge
+          color="primary"
+          variant="subtle"
+        >
+          Contact us
+        </UBadge>
+
+        <h2 class="mt-4 text-display-sm font-semibold md:text-display-md">
+          We'd love to hear from you
+        </h2>
+
+        <p class="mt-4 text-lg text-muted-600 dark:text-muted-400 md:text-xl">
+          Our friendly team is always here to chat.
+        </p>
       </div>
 
-      <div class="mt-12 md:mt-16">
-        <ul class="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <li v-for="item in contactItems" :key="item.title" class="flex h-full flex-col items-start bg-muted-100 p-6 dark:bg-muted-900">
-            <div class="relative flex size-12 shrink-0 items-center justify-center rounded-[10px] bg-primary text-white">
-              <Icon :name="item.icon" class="size-6" />
+      <!-- Grid -->
+      <div class="mt-12 md:mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <UCard
+          v-for="item in contactItems"
+          :key="item.title"
+          class="flex flex-col"
+        >
+          <div class="flex flex-col gap-4">
+            <!-- Icon -->
+            <div class="flex size-12 items-center justify-center rounded-xl bg-primary text-white">
+              <Icon
+                :name="item.icon"
+                class="size-6"
+              />
             </div>
-            <h3 class="mt-12 text-lg font-semibold text-primary md:mt-16">{{ item.title }}</h3>
-            <p class="mt-1 text-md text-muted-600 dark:text-muted-400">{{ item.description }}</p>
-            <ULink :to="item.link" class="mt-4 whitespace-pre font-semibold text-primary hover:text-primary/80 md:mt-5">
+
+            <!-- Content -->
+            <div>
+              <h3 class="text-lg font-semibold text-primary">
+                {{ item.title }}
+              </h3>
+
+              <p class="mt-1 text-sm text-muted-600 dark:text-muted-400">
+                {{ item.description }}
+              </p>
+            </div>
+
+            <!-- Link -->
+            <ULink
+              :to="item.link"
+              class="mt-auto whitespace-pre-line font-semibold text-primary hover:text-primary/80"
+            >
               {{ item.linkText }}
             </ULink>
-          </li>
-        </ul>
+          </div>
+        </UCard>
       </div>
     </div>
   </section>
