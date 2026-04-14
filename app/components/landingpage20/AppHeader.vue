@@ -1,39 +1,39 @@
 <script setup lang="ts">
-import { useMobileMenu } from "./useMobileMenu";
+import { useMobileMenu } from './useMobileMenu'
 
-const { isOpen, toggle, close } = useMobileMenu();
+const { isOpen, toggle, close } = useMobileMenu()
 
 const navigationItems = [
   {
-    label: "Products",
-    type: "dropdown",
+    label: 'Products',
+    type: 'dropdown',
     items: [
-      { label: "Overview", to: "/products" },
-      { label: "Features", to: "/products/features" },
-      { label: "Integrations", to: "/products/integrations" },
-    ],
+      { label: 'Overview', to: '/products' },
+      { label: 'Features', to: '/products/features' },
+      { label: 'Integrations', to: '/products/integrations' }
+    ]
   },
   {
-    label: "Services",
-    type: "dropdown",
+    label: 'Services',
+    type: 'dropdown',
     items: [
-      { label: "Consulting", to: "/services/consulting" },
-      { label: "Support", to: "/services/support" },
-      { label: "Training", to: "/services/training" },
-    ],
+      { label: 'Consulting', to: '/services/consulting' },
+      { label: 'Support', to: '/services/support' },
+      { label: 'Training', to: '/services/training' }
+    ]
   },
-  { label: "Pricing", type: "link", to: "/pricing" },
+  { label: 'Pricing', type: 'link', to: '/pricing' },
   {
-    label: "Resources",
-    type: "dropdown",
+    label: 'Resources',
+    type: 'dropdown',
     items: [
-      { label: "Blog", to: "/resources/blog" },
-      { label: "Documentation", to: "/resources/docs" },
-      { label: "Help Center", to: "/resources/help" },
-    ],
+      { label: 'Blog', to: '/resources/blog' },
+      { label: 'Documentation', to: '/resources/docs' },
+      { label: 'Help Center', to: '/resources/help' }
+    ]
   },
-  { label: "About", type: "link", to: "/about" },
-];
+  { label: 'About', type: 'link', to: '/about' }
+]
 </script>
 
 <template>
@@ -43,7 +43,6 @@ const navigationItems = [
     >
       <div class="flex w-full justify-between gap-4">
         <div class="flex flex-1 items-center gap-5">
-          <!-- Logo Desktop -->
           <NuxtLink
             to="/"
             class="flex w-max items-center justify-start overflow-visible h-7 md:max-lg:hidden"
@@ -62,21 +61,26 @@ const navigationItems = [
             <span class="text-xl font-bold text-primary">Untitled UI</span>
           </NuxtLink>
 
-          <!-- Desktop Navigation -->
           <nav class="max-md:hidden">
             <ul class="flex items-center gap-0.5">
-              <li v-for="item in navigationItems" :key="item.label">
+              <li
+                v-for="item in navigationItems"
+                :key="item.label"
+              >
                 <UDropdownMenu
                   v-if="item.type === 'dropdown'"
                   :items="item.items"
                 >
                   <UButton
                     variant="link"
-                    color="muted"
+                    color="neutral"
                     class="flex cursor-pointer items-center gap-0.5 rounded-lg px-1.5 py-1 text-sm font-semibold hover:text-muted-700 dark:hover:text-muted-300"
                   >
                     {{ item.label }}
-                    <Icon name="lucide:chevron-down" class="size-4" />
+                    <Icon
+                      name="lucide:chevron-down"
+                      class="size-4"
+                    />
                   </UButton>
                 </UDropdownMenu>
                 <ULink
@@ -91,38 +95,65 @@ const navigationItems = [
           </nav>
         </div>
 
-        <!-- Auth Buttons -->
         <div class="hidden items-center gap-3 md:flex">
-          <UButton variant="ghost" color="muted" size="md">Log in</UButton>
-          <UButton variant="solid" color="primary" size="md">Sign up</UButton>
+          <UButton
+            variant="ghost"
+            color="muted"
+            size="md"
+          >
+            Log in
+          </UButton>
+          <UButton
+            variant="solid"
+            color="primary"
+            size="md"
+          >
+            Sign up
+          </UButton>
         </div>
 
-        <!-- Mobile Menu Button -->
         <UButton
           variant="ghost"
           color="muted"
           class="ml-auto cursor-pointer rounded-lg p-2 md:hidden"
           @click="toggle"
         >
-          <Icon v-if="!isOpen" name="lucide:menu" class="size-6" />
-          <Icon v-else name="lucide:x" class="size-6" />
+          <Icon
+            v-if="!isOpen"
+            name="lucide:menu"
+            class="size-6"
+          />
+          <Icon
+            v-else
+            name="lucide:x"
+            class="size-6"
+          />
         </UButton>
       </div>
     </div>
 
-    <!-- Mobile Menu Overlay -->
     <div
       v-if="isOpen"
       class="fixed inset-0 z-50 bg-muted/95 backdrop-blur-sm md:hidden"
     >
       <div class="flex flex-col p-6 gap-6">
         <div class="flex justify-end">
-          <UButton variant="ghost" color="muted" @click="close">
-            <Icon name="lucide:x" class="size-6" />
+          <UButton
+            variant="ghost"
+            color="muted"
+            @click="close"
+          >
+            <Icon
+              name="lucide:x"
+              class="size-6"
+            />
           </UButton>
         </div>
         <nav class="flex flex-col gap-4">
-          <div v-for="item in navigationItems" :key="item.label">
+          <div
+            v-for="item in navigationItems"
+            :key="item.label"
+          >
             <UDropdownMenu
               v-if="item.type === 'dropdown'"
               :items="item.items"
@@ -134,7 +165,10 @@ const navigationItems = [
                 class="w-full justify-between text-lg font-semibold"
               >
                 {{ item.label }}
-                <Icon name="lucide:chevron-down" class="size-4" />
+                <Icon
+                  name="lucide:chevron-down"
+                  class="size-4"
+                />
               </UButton>
             </UDropdownMenu>
             <ULink
@@ -149,16 +183,22 @@ const navigationItems = [
           <div
             class="mt-4 flex flex-col gap-3 pt-4 border-t border-muted-200 dark:border-muted-800"
           >
-            <UButton variant="ghost" color="muted" block class="justify-center"
-              >Log in</UButton
+            <UButton
+              variant="ghost"
+              color="muted"
+              block
+              class="justify-center"
             >
+              Log in
+            </UButton>
             <UButton
               variant="solid"
               color="primary"
               block
               class="justify-center"
-              >Sign up</UButton
             >
+              Sign up
+            </UButton>
           </div>
         </nav>
       </div>
@@ -167,7 +207,6 @@ const navigationItems = [
 </template>
 
 <style scoped>
-/* Matches the original branding structure */
 .filter0_logo {
   filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
 }
